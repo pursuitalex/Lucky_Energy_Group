@@ -1,0 +1,113 @@
+<main id="main">
+
+  <section class="page-head">
+    <div class="container">
+      <div class="page-head__row" style="margin-top:0">
+        <div class="stack" style="--stack-gap:var(--space-5)">
+          <nav aria-label="Хлібні крихти"><ol class="breadcrumbs" id="crumbs"><li><a href="index.html">Головна</a></li><li aria-current="page">Каталог</li></ol></nav>
+          <h1 class="t-h1" id="h1">Каталог обладнання</h1>
+        </div>
+        <p class="page-head__lead">Усе для енергонезалежності — від одного інвертора до готової станції з монтажем. Кожну позицію перевіряємо на сумісність перед відправкою.</p>
+      </div>
+      <nav class="cat-nav" id="cat-nav" aria-label="Категорії каталогу"></nav>
+    </div>
+  </section>
+
+  <div class="container catalog">
+
+    <aside class="filters" id="filters" aria-label="Фільтри">
+      <div class="filters__head">
+        <span class="filters__title">Фільтри</span>
+        <button type="button" class="filters__reset" data-reset>Скинути</button>
+        <button type="button" class="btn btn--ghost btn--icon btn--sm filters__close" id="close-filters" aria-label="Закрити фільтри"><svg class="icon"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="filters__body">
+        <details class="filter" open>
+          <summary>Наявність і ціна</summary>
+          <div class="filter__body" style="gap:var(--space-3)">
+            <label class="switch"><input type="checkbox" role="switch" id="f-stock">Лише в наявності</label>
+            <div class="filter__range">
+              <label class="visually-hidden" for="f-price-min">Ціна від, грн</label><input class="input" id="f-price-min" type="number" inputmode="numeric" min="0" step="1000" placeholder="від, грн">
+              <label class="visually-hidden" for="f-price-max">Ціна до, грн</label><input class="input" id="f-price-max" type="number" inputmode="numeric" min="0" step="1000" placeholder="до, грн">
+            </div>
+          </div>
+        </details>
+        <details class="filter" open><summary>Бренд</summary><div class="filter__body" id="f-brands"></div></details>
+        <details class="filter" open><summary>Тип</summary><div class="filter__body" id="f-types"></div></details>
+        <details class="filter" open data-filter="power"><summary>Потужність</summary><div class="filter__body" id="f-power"></div></details>
+        <details class="filter" data-filter="phases"><summary>Кількість фаз</summary><div class="filter__body" id="f-phases"></div></details>
+        <details class="filter" data-filter="capacity"><summary>Ємність накопичувача</summary><div class="filter__body" id="f-capacity"></div></details>
+      </div>
+      <div class="filters__foot"><button type="button" class="btn btn--primary btn--block" id="apply-filters"><span id="apply-count">Показати товари</span></button></div>
+    </aside>
+    <div class="filters-backdrop" id="filters-backdrop"></div>
+
+    <section aria-label="Товари">
+      <div class="toolbar">
+        <p class="toolbar__count" id="count" aria-live="polite">Завантаження…</p>
+        <button type="button" class="btn btn--secondary btn--sm toolbar__filters-btn" id="open-filters"><svg class="icon"><use href="#i-filter"/></svg>Фільтри</button>
+        <label class="switch"><input type="checkbox" role="switch" id="with-install">Ціни з монтажем</label>
+        <label class="visually-hidden" for="sort">Сортування</label>
+        <select class="select" id="sort">
+          <option value="popular">Спершу популярні</option>
+          <option value="cheap">Спершу дешевші</option>
+          <option value="expensive">Спершу дорожчі</option>
+          <option value="rating">За рейтингом</option>
+          <option value="power">За потужністю</option>
+        </select>
+      </div>
+      <div class="active-filters" id="active"></div>
+      <div class="product-grid" id="grid"></div>
+      <div class="load-more" id="load-more" hidden>
+        <span class="t-body-sm c-secondary" id="load-more-text"></span>
+        <div class="progress"><div class="progress__bar" id="load-more-bar"></div></div>
+        <button type="button" class="btn btn--secondary btn--lg" id="more">Показати ще</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Як обрати: три кроки в ряд -->
+  <section class="section section--alt" id="guide">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Як обрати</span><h2 class="t-h2">Три кроки <span class="t-dim">до правильної системи</span></h2></div>
+        <p class="section-head__aside" data-reveal>Найчастіша помилка — купити «потужніше про запас» і не перевірити сумісність. Почніть зі споживання, а не з моделі.</p>
+      </div>
+      <ol class="guide-steps">
+        <li data-reveal><a href="index.html#blog" class="card card--interactive guide-step"><span class="guide-step__num">01</span><strong class="t-h4">Порахуйте, що має працювати</strong><span class="t-body-sm c-secondary">Котел, насос, холодильник — їхні пускові струми важливіші за паспортні вати.</span><span class="guide-step__more">Як порахувати <span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></a></li>
+        <li data-reveal><a href="index.html#blog" class="card card--interactive guide-step"><span class="guide-step__num">02</span><strong class="t-h4">Оберіть інвертор під фази й резерв</strong><span class="t-body-sm c-secondary">Одна чи три фази, гібридний чи автономний, низько- чи високовольтні АКБ.</span><span class="guide-step__more">Гід по інверторах <span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></a></li>
+        <li data-reveal><a href="index.html#quiz" class="card card--interactive guide-step guide-step--accent"><span class="guide-step__num">03</span><strong class="t-h4">Перевірте сумісність — або довірте це нам</strong><span class="t-body-sm">Квіз на 5 запитань видає готовий комплект із ціною.</span><span class="guide-step__more">Пройти квіз <span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Часті запитання: заголовок і контакт ліворуч, відповіді праворуч -->
+  <section class="section" id="faq">
+    <div class="container split">
+      <div class="faq-aside" data-reveal>
+        <span class="label-chip">Питання</span>
+        <h2 class="t-h2">Часті запитання <span class="t-dim">про покупку</span></h2>
+        <div class="faq-aside__contact">
+          <svg class="svc-icon svc-icon--sm" aria-hidden="true"><use href="img/icons-services.svg#svc-house-energy"/></svg>
+          <span><strong>Не знайшли відповідь?</strong><br><span class="t-body-sm c-secondary">Інженер відповість протягом 2 годин</span></span>
+          <a href="tel:0800750120" class="faq-aside__phone">0 800 750 120</a>
+          <a href="index.html#lead" class="btn btn--secondary">Написати нам</a>
+        </div>
+      </div>
+      <div data-reveal>
+    <div class="accordion">
+      <div class="accordion__item"><button class="accordion__trigger" aria-expanded="true"><span class="accordion__title">Чи можна купити лише обладнання, без монтажу?</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p style="padding-left:0">Так. Біля кожної ціни вказано вартість монтажу окремо, а перемикач «Ціни з монтажем» показує суму під ключ. Для готових комплектів монтаж уже в ціні.</p></div></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" aria-expanded="false"><span class="accordion__title">Як дізнатися, що акумулятор підійде до мого інвертора?</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p style="padding-left:0">У картці товару є блок сумісності. Якщо сумніваєтесь — інженер перевірить пару безкоштовно до оплати.</p></div></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" aria-expanded="false"><span class="accordion__title">Яка гарантія і хто її виконує?</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p style="padding-left:0">Офіційна гарантія виробника на обладнання та 5 років на монтажні роботи. Гарантійні звернення приймаємо самі — не відправляємо вас до постачальника.</p></div></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" aria-expanded="false"><span class="accordion__title">Чи можна оплатити частинами або взяти кредит 0%?</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p style="padding-left:0">Оплата частинами від ПриватБанку й monobank — до 24 платежів прямо в кошику. Для приватних будинків допомагаємо оформити державний кредит 0%.</p></div></div></div>
+    </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="compare-bar" id="compare-bar" role="status">
+  <span id="compare-text">До порівняння: 0 товарів</span>
+  <button type="button" class="compare-bar__clear" id="compare-clear">Очистити</button>
+  <a href="compare.html" class="btn btn--primary btn--sm" id="compare-link">Порівняти</a>
+</div>

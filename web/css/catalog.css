@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Lucky Energy · Каталог — шапка сторінки, категорії, фільтри, сітка товарів.
+   Картки товарів, чіпи, бейджі, поля — з components.css.
+   ========================================================================== */
+
+/* ---------- Шапка сторінки ---------- */
+.page-head { position: relative; isolation: isolate; padding-top: 9.5rem; padding-bottom: var(--space-10); overflow: hidden; }
+.page-head::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(40% 90% at 88% 0%, rgba(53,227,132,.16), transparent 70%),
+  radial-gradient(30% 60% at 0% 100%, rgba(53,227,132,.07), transparent 70%); }
+.page-head__row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-6) var(--space-16); margin-top: var(--space-6); }
+.page-head__lead { max-width: 30rem; color: var(--color-text-secondary); }
+@media (max-width: 899px) { .page-head { padding-top: 7.5rem; } }
+
+/* ---------- Категорії ---------- */
+.cat-nav { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-10); }
+.cat-nav__item {
+  display: flex; flex-direction: column; gap: var(--space-4); min-height: 8.5rem; padding: var(--space-5);
+  border: 1.5px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-surface-1);
+  color: var(--color-text); text-align: left; text-decoration: none; cursor: pointer;
+  transition: border-color var(--dur-fast), background-color var(--dur-fast), box-shadow var(--dur-base), transform var(--dur-base) var(--ease-emphasized);
+}
+.cat-nav__item svg { width: 2rem; height: 2rem; color: var(--color-text-secondary); stroke-width: 1.6; transition: color var(--dur-base); }
+.cat-nav__name { margin-top: auto; font-weight: var(--fw-semibold); line-height: 1.25; }
+.cat-nav__count { font-size: var(--fs-caption); color: var(--color-text-tertiary); }
+.cat-nav__item:hover { border-color: var(--color-border-strong); background: var(--color-surface-2); transform: translateY(-2px); }
+.cat-nav__item:hover svg { color: var(--color-text); }
+.cat-nav__item[aria-pressed="true"] { border-color: var(--color-accent); background: var(--color-accent-soft); box-shadow: var(--glow-accent); }
+.cat-nav__item[aria-pressed="true"] svg { color: var(--color-accent); }
+@media (max-width: 1199px) { .cat-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+  .cat-nav { display: flex; overflow-x: auto; margin-inline: calc(-1 * var(--container-x)); padding-inline: var(--container-x); scrollbar-width: none; scroll-snap-type: x proximity; }
+  .cat-nav__item { flex: 0 0 9.5rem; min-height: 7.5rem; scroll-snap-align: start; }
+}
+
+/* ---------- Розкладка: фільтри + товари ---------- */
+.catalog { display: grid; grid-template-columns: 18.5rem minmax(0, 1fr); gap: var(--space-10); align-items: start; padding-block: var(--space-10) var(--section-y); }
+@media (max-width: 1099px) { .catalog { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Фільтри ---------- */
+.filters { position: sticky; top: 7.5rem; display: flex; flex-direction: column; max-height: calc(100vh - 9rem); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-surface-1); overflow: hidden; }
+.filters__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-5) var(--space-5) var(--space-4); }
+.filters__title { font-size: var(--fs-h4); font-weight: var(--fw-semibold); }
+.filters__reset { border: 0; background: transparent; color: var(--color-accent-text); font-size: var(--fs-body-sm); font-weight: var(--fw-semibold); min-height: var(--control-sm); padding: 0 var(--space-2); }
+.filters__reset:hover { text-decoration: underline; }
+.filters__body { overflow-y: auto; padding: 0 var(--space-5); scrollbar-width: thin; scrollbar-color: var(--color-border-strong) transparent; }
+.filters__foot { display: none; padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-border-subtle); }
+.filters__close { display: none; }
+
+.filter { border-top: 1px solid var(--color-border-subtle); }
+.filter > summary { display: flex; align-items: center; justify-content: space-between; min-height: 3.5rem; font-weight: var(--fw-semibold); cursor: pointer; list-style: none; }
+.filter > summary::-webkit-details-marker { display: none; }
+.filter > summary::after { content: ""; width: .625rem; height: .625rem; margin-right: .25rem; border-right: 2px solid var(--color-text-secondary); border-bottom: 2px solid var(--color-text-secondary); transform: rotate(45deg) translateY(-2px); transition: transform var(--dur-base) var(--ease-emphasized); }
+.filter[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.filter__body { display: flex; flex-direction: column; gap: .125rem; padding-bottom: var(--space-5); }
+.filter .check { width: 100%; min-height: 2.75rem; font-size: var(--fs-body-sm); }
+.filter .check span:last-child { margin-left: auto; font-size: var(--fs-caption); color: var(--color-text-tertiary); font-variant-numeric: tabular-nums; }
+.filter .check input:disabled ~ span { color: var(--color-text-disabled); }
+.filter__range { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.filter__range .input { min-height: var(--control-md); padding-inline: var(--space-4); font-size: var(--fs-body-sm); }
+.filter[hidden] { display: none; }
+
+/* Фільтри як шторка на вузьких екранах */
+.filters-backdrop { display: none; }
+@media (max-width: 1099px) {
+  .filters { position: fixed; inset: 0 auto 0 0; z-index: var(--z-modal); width: min(24rem, 100%); max-height: none; border-radius: 0 var(--radius-xl) var(--radius-xl) 0; border-width: 0 1px 0 0; transform: translateX(-102%); visibility: hidden; transition: transform var(--dur-slow) var(--ease-emphasized), visibility 0s var(--dur-slow); }
+  .filters.is-open { transform: none; visibility: visible; transition: transform var(--dur-slow) var(--ease-emphasized); }
+  .filters__body { flex-grow: 1; }
+  .filters__foot, .filters__close { display: flex; }
+  .filters-backdrop { position: fixed; inset: 0; z-index: calc(var(--z-modal) - 1); background: var(--color-overlay); backdrop-filter: blur(4px); }
+  .filters-backdrop.is-open { display: block; }
+}
+
+/* ---------- Панель над сіткою ---------- */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); margin-bottom: var(--space-6); }
+.toolbar__count { font-weight: var(--fw-semibold); margin-right: auto; }
+.toolbar__count span { color: var(--color-text-tertiary); font-weight: var(--fw-regular); }
+.toolbar__filters-btn { display: none; }
+.toolbar .select { width: auto; min-height: var(--control-md); border-radius: var(--radius-pill); font-size: var(--fs-body-sm); padding-left: var(--space-5); }
+.toolbar .switch { font-size: var(--fs-body-sm); font-weight: var(--fw-medium); }
+@media (max-width: 1099px) { .toolbar__filters-btn { display: inline-flex; } }
+@media (max-width: 639px) { .toolbar__count { width: 100%; } .toolbar .select { flex-grow: 1; } }
+
+.active-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+.active-filters:empty { display: none; }
+.active-filters .chip { min-height: 2.5rem; padding-right: var(--space-3); background: var(--color-surface-2); color: var(--color-text); }
+.active-filters .chip svg { width: 1rem; height: 1rem; color: var(--color-text-tertiary); }
+.active-filters .chip:hover svg { color: var(--color-danger); }
+
+/* ---------- Сітка товарів ---------- */
+.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
+@media (max-width: 1399px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 599px) { .product-grid { grid-template-columns: minmax(0, 1fr); } }
+/* Ряд на 4 картки (сумісність, «з цим купують», кошик). Якщо товарів лише три — три ширші колонки, без порожнього місця */
+.product-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1399px) { .product-grid--4 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .product-grid--4 > :nth-child(n+4) { display: none; } }
+@media (max-width: 999px) { .product-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-grid--4 > :nth-child(n+4) { display: flex; } }
+@media (max-width: 599px) { .product-grid--4 { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 1400px) { .product-grid--4:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.product-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform var(--dur-reveal) var(--ease-emphasized); }
+.product-card__media { overflow: hidden; border-radius: var(--radius-md); background: var(--color-bg-page); }
+.product-card:hover .product-card__media img { transform: scale(1.05); }
+.product-card__tools { position: absolute; top: var(--space-2); right: var(--space-2); z-index: 1; display: flex; flex-direction: column; gap: var(--space-2); }
+.product-card__tools .product-card__fav { position: static; }
+.product-card__fav[aria-pressed="true"] { background: var(--color-accent); color: var(--color-on-accent); }
+.product-card__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.product-card__title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; min-height: 2.7em; }
+.product-card .specs { margin: 0; }
+.product-card__install { font-size: var(--fs-caption); color: var(--color-text-tertiary); }
+.product-card__install b { color: var(--color-accent-text); font-weight: var(--fw-semibold); }
+.product-card .btn--primary { flex-shrink: 0; }
+
+/* Вставка-підказка посеред сітки */
+.grid-help { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-6); padding: var(--space-8); border-radius: var(--radius-xl); background: var(--color-bg-inverse); color: var(--color-text-inverse); }
+.grid-help p { max-width: 38rem; color: var(--color-text-inverse-secondary); }
+.grid-help h3 { margin-bottom: var(--space-2); }
+
+.empty { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: var(--space-5); padding: var(--space-20) var(--space-6); border: 1px dashed var(--color-border); border-radius: var(--radius-xl); text-align: center; }
+.empty p { max-width: 28rem; color: var(--color-text-secondary); }
+
+.load-more { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); margin-top: var(--space-12); }
+.load-more .progress { width: min(20rem, 100%); height: .25rem; }
+.load-more[hidden] { display: none; }
+
+/* ---------- Панель порівняння ---------- */
+.compare-bar { position: fixed; left: 50%; bottom: var(--space-5); z-index: var(--z-sticky); display: flex; align-items: center; gap: var(--space-4); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-6); border: 1px solid var(--color-border-strong); border-radius: var(--radius-pill); background: var(--color-surface-3); box-shadow: var(--shadow-3); transform: translate(-50%, 160%); transition: transform var(--dur-slow) var(--ease-emphasized); white-space: nowrap; }
+.compare-bar.is-visible { transform: translate(-50%, 0); }
+.compare-bar__clear { border: 0; background: transparent; color: var(--color-text-secondary); min-height: var(--control-sm); padding: 0 var(--space-2); font-size: var(--fs-body-sm); }
+.compare-bar__clear:hover { color: var(--color-text); }
+@media (max-width: 767px) { .compare-bar { bottom: 6rem; } }
+
+/* ---------- Як обрати + FAQ ---------- */
+.guide-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); margin: 0; padding: 0; list-style: none; counter-reset: none; }
+.guide-steps > li { display: flex; }
+.guide-step { flex: 1; gap: var(--space-3); min-height: 19rem; padding: var(--space-8); text-decoration: none; }
+.guide-step__num { margin-bottom: auto; padding-bottom: var(--space-8); font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(3.5rem, 2.5rem + 3vw, 5.5rem); line-height: 1; letter-spacing: var(--ls-heading); color: transparent; -webkit-text-stroke: 1.25px var(--color-border-strong); transition: -webkit-text-stroke-color var(--dur-base); }
+.guide-step:hover .guide-step__num { -webkit-text-stroke-color: var(--color-accent); }
+.guide-step__more { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-5); padding-top: var(--space-5); border-top: 1px solid var(--color-border-subtle); font-size: var(--fs-body-sm); font-weight: var(--fw-semibold); }
+.guide-step--accent { border-color: transparent; background: var(--color-accent); color: var(--color-on-accent); }
+.guide-step--accent:hover { background: var(--color-accent-hover); }
+.guide-step--accent .guide-step__num, .guide-step--accent:hover .guide-step__num { -webkit-text-stroke-color: var(--color-on-accent); }
+.guide-step--accent .guide-step__more { border-top-color: rgba(4, 19, 11, .2); }
+.guide-step--accent .arrow-btn { background: var(--color-on-accent); border-color: var(--color-on-accent); color: var(--color-accent); }
+@media (max-width: 899px) { .guide-steps { grid-template-columns: minmax(0, 1fr); } .guide-step { min-height: 0; } .guide-step__num { padding-bottom: var(--space-5); } }
+
+.faq-aside { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-5); }
+.faq-aside__contact { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-4); width: 100%; max-width: 24rem; margin-top: var(--space-4); padding: var(--space-6); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-surface-1); }
+.faq-aside__phone { grid-column: 1 / -1; font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.5rem; letter-spacing: var(--ls-heading); text-decoration: none; }
+.faq-aside__contact .btn { grid-column: 1 / -1; }
+@media (min-width: 900px) { .faq-aside { position: sticky; top: 8rem; } }

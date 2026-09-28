@@ -1,0 +1,5 @@
+# Переноси рядків завжди LF: збирачі шукають фрагменти розмітки з переносами, і на Windows з CRLF вони ламаються
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.ico binary

@@ -1,0 +1,40 @@
+<main id="main" class="blog-page">
+
+  <section class="page-head page-head--compact">
+    <div class="container">
+      <nav aria-label="Хлібні крихти"><ol class="breadcrumbs"><li><a href="index.html">Головна</a></li><li aria-current="page">Блог</li></ol></nav>
+      <div class="page-head__row">
+        <div class="stack" style="--stack-gap:var(--space-5)">
+          <h1 class="t-h1">Корисне <span class="t-dim">перед покупкою</span></h1>
+        </div>
+        <p class="page-head__lead">Пишемо інженери, а не копірайтери: як обрати обладнання, скільки це коштує насправді і що працює в українських умовах.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container blog">
+    <!-- Рубрики й пошук -->
+    <div class="blog__filters">
+      <div class="cases__chips" role="group" aria-label="Рубрика" id="blog-cats"></div>
+      <form class="blog__search" role="search" onsubmit="return false"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="blog-q" placeholder="Пошук у статтях" aria-label="Пошук у статтях"></form>
+    </div>
+
+    <!-- Головна стаття -->
+    <a href="blog.html" class="blog-feature" id="blog-feature" hidden></a>
+
+    <p class="cases__count c-secondary" id="blog-count" role="status"></p>
+    <div class="kb-posts blog__grid" id="blog-grid"></div>
+
+    <div class="empty" id="blog-empty" hidden>
+      <h2 class="t-h3">Нічого не знайшли</h2>
+      <p>Спробуйте інше слово або приберіть рубрику. А якщо теми справді немає — напишіть, про що написати.</p>
+      <div class="cluster" style="justify-content:center"><button type="button" class="btn btn--secondary" id="blog-reset">Показати всі статті</button><a href="index.html#lead" class="btn btn--primary">Запитати інженера</a></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <aside class="grid-help" data-reveal><div><h3 class="t-h3">Не знайшли відповіді?</h3><p>Інженер відповість протягом 2 годин у зручному каналі й порахує систему під ваш об'єкт — безкоштовно.</p></div><div class="cluster"><a href="index.html#lead" class="btn btn--dark btn--lg">Запитати інженера <svg class="icon"><use href="#i-arrow"/></svg></a><a href="quiz.html" class="btn btn--secondary btn--lg">Пройти підбір</a></div></aside>
+    </div>
+  </section>
+</main>

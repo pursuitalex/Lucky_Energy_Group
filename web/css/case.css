@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Lucky Energy · сторінка кейсу (case.html?id=…). Спирається на solution.css (.sol-facts, .sol-checklist, .sol-cases),
+   home.css (.trust__person) і kb-meta з home.css.
+   ========================================================================== */
+
+.case-hero { padding-bottom: 0; overflow: visible; }
+.case-hero .page-head__row { display: none; }
+.case-hero__head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; margin-top: var(--space-6); }
+.case-hero__head h1 { text-wrap: balance; }
+.case-hero__lead { max-width: 34rem; }
+.case-hero__media { margin: var(--space-10) 0 0; aspect-ratio: 21 / 9; overflow: hidden; border-radius: var(--radius-2xl); background: var(--color-surface-1); }
+.case-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.kb-meta { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-text-tertiary); }
+
+.case-task { font-size: var(--fs-body-lg); line-height: 1.5; color: var(--color-text-secondary); text-wrap: pretty; }
+@media (min-width: 900px) { .case-aside { position: sticky; top: 8rem; } }
+.case-solution { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; counter-reset: sol; border-top: 1px solid var(--color-border-subtle); }
+.case-solution li { counter-increment: sol; display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-4); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border-subtle); font-size: 1.125rem; line-height: 1.55; }
+.case-solution li::before { content: counter(sol, decimal-leading-zero); padding-top: .2em; font-family: var(--font-mono); font-size: var(--fs-label); color: var(--color-accent-text); }
+
+/* ---------- Обладнання: великі картки з фото товару ---------- */
+.case-equipment { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--grid-gap); }
+.case-eq { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-4) var(--space-4) var(--space-6); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); background: var(--color-surface-1); box-shadow: var(--shadow-inset-hi); text-decoration: none; transition: border-color var(--dur-base), box-shadow var(--dur-base), transform var(--dur-base) var(--ease-emphasized); }
+a.case-eq:hover { border-color: var(--color-accent-border); box-shadow: var(--glow-accent); transform: translateY(-4px); }
+.case-eq__media { position: relative; aspect-ratio: 1192 / 1100; overflow: hidden; border-radius: var(--radius-md); background: var(--color-bg-page); border: 1px solid var(--color-border-subtle); }
+.case-eq__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-reveal) var(--ease-emphasized); }
+a.case-eq:hover .case-eq__media img { transform: scale(1.05); }
+.case-eq__qty { position: absolute; top: var(--space-3); left: var(--space-3); }
+.case-eq__body { display: flex; flex-direction: column; gap: var(--space-2); padding-inline: var(--space-2); }
+.case-eq__role { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-text-tertiary); }
+.case-eq__title { font-size: 1.25rem; font-weight: var(--fw-semibold); line-height: var(--lh-snug); text-wrap: pretty; }
+.case-eq__spec { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.case-eq__link { display: inline-flex; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-3); color: var(--color-accent-text); font-size: var(--fs-body-sm); font-weight: var(--fw-semibold); }
+.case-eq__link svg { width: 1rem; height: 1rem; transition: transform var(--dur-base) var(--ease-emphasized); }
+a.case-eq:hover .case-eq__link svg { transform: translateX(4px); }
+/* заглушка для комплектуючих без картки товару */
+.case-eq--misc .case-eq__media { display: grid; place-items: center; background: repeating-linear-gradient(135deg, var(--color-surface-2) 0 10px, var(--color-surface-1) 10px 20px); }
+.case-eq--misc .case-eq__media svg { width: 3rem; height: 3rem; color: var(--color-text-tertiary); }
+.case-eq--misc .case-eq__link { color: var(--color-text-tertiary); font-weight: var(--fw-regular); }
+
+/* ---------- Етапи: покрокова лінія ---------- */
+.case-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-6); margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.case-steps li { counter-increment: step; position: relative; display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-6); }
+/* лінія між кроками + кружечок з номером */
+.case-steps li::before { content: ""; position: absolute; top: 1.375rem; left: 0; right: calc(var(--space-6) * -1); height: 2px; background: var(--color-border); }
+.case-steps li:last-child::before { right: 0; }
+.case-steps li::after { content: counter(step); position: absolute; top: 0; left: 0; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 2px solid var(--color-accent); background: var(--color-bg-page); color: var(--color-accent-text); font-family: var(--font-mono); font-size: var(--fs-body-sm); font-weight: var(--fw-medium); }
+.case-steps li:last-child::after { background: var(--color-accent); color: var(--color-on-accent); }
+.case-steps strong { display: block; margin-top: var(--space-6); font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-h4); letter-spacing: var(--ls-heading); line-height: 1.2; }
+.case-steps span { display: block; font-size: var(--fs-body); line-height: 1.5; color: var(--color-text-secondary); }
+
+/* Галерея: горизонтальна стрічка кадрів 16:9 у межах контейнера. Обрізаний кадр праворуч приглушується
+   широким градієнтом у колір тла; ліворуч градієнт з'являється, коли стрічку прогорнули. */
+.case-gallery-wrap { position: relative; }
+.case-gallery { display: flex; gap: var(--grid-gap); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.case-gallery::-webkit-scrollbar { display: none; }
+.case-gallery:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+.case-gallery figure { flex: 0 0 auto; width: min(40rem, 82vw); margin: 0; display: flex; flex-direction: column; gap: var(--space-3); scroll-snap-align: start; }
+.case-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-xl); background: var(--color-surface-1); }
+.case-gallery figcaption { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.case-gallery__nav { --cluster-gap: var(--space-2); }
+.case-gallery-wrap::before, .case-gallery-wrap::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 1; width: clamp(6rem, 22vw, 18rem); pointer-events: none; transition: opacity var(--dur-base); }
+.case-gallery-wrap::before { left: 0; background: linear-gradient(90deg, var(--color-bg-page) 0%, color-mix(in srgb, var(--color-bg-page) 75%, transparent) 40%, transparent 100%); }
+.case-gallery-wrap::after { right: 0; background: linear-gradient(270deg, var(--color-bg-page) 0%, color-mix(in srgb, var(--color-bg-page) 75%, transparent) 40%, transparent 100%); }
+.case-gallery-wrap.is-start::before, .case-gallery-wrap.is-end::after { opacity: 0; }
+
+.case-review { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-8); max-width: 52rem; margin: 0 auto; text-align: left; }
+.case-review blockquote { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(1.375rem, 1rem + 1.6vw, 2.25rem); line-height: 1.3; letter-spacing: var(--ls-heading); text-wrap: pretty; }
+.case-review blockquote::before { content: "«"; }
+.case-review blockquote::after { content: "»"; }
+
+@media (max-width: 899px) {
+  .case-hero__head { grid-template-columns: minmax(0, 1fr); }
+  .case-hero__media { margin-top: var(--space-6); aspect-ratio: 16 / 10; border-radius: var(--radius-xl); }
+  .case-equipment { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-steps { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .case-steps li { padding: 0 0 var(--space-8) 4rem; }
+  .case-steps li::before { top: 0; bottom: 0; left: 1.3125rem; right: auto; width: 2px; height: auto; }
+  .case-steps li:last-child::before { display: none; }
+  .case-steps strong { margin-top: .25rem; }
+}
+@media (max-width: 639px) {
+  .case-solution li { grid-template-columns: 2.25rem minmax(0, 1fr); font-size: var(--fs-body); }
+  .case-equipment { grid-template-columns: minmax(0, 1fr); }
+  .grid-help .cluster .btn { width: 100%; }
+}

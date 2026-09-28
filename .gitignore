@@ -1,0 +1,17 @@
+# У репозиторії лише сайт і його збірка
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/vercel.json
+!/web/
+!/tools/
+
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+*.log
+.vercel/
+.env
+.env.*

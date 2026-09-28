@@ -1,0 +1,46 @@
+<main id="main" class="compare-page">
+
+  <section class="page-head page-head--compact">
+    <div class="container">
+      <nav aria-label="Хлібні крихти"><ol class="breadcrumbs"><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li aria-current="page">Порівняння</li></ol></nav>
+      <div class="page-head__row">
+        <h1 class="t-h1">Порівняння <span class="t-dim" id="cmp-count"></span></h1>
+        <div class="cmp-tools" id="cmp-tools">
+          <label class="switch"><input type="checkbox" id="cmp-diff">Лише відмінності</label>
+          <label class="switch"><input type="checkbox" id="cmp-install">Ціни з монтажем</label>
+          <button type="button" class="cart__clear" id="cmp-clear">Очистити список</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Таблиця порівняння -->
+  <div class="container" id="cmp" hidden>
+    <div class="alert alert--warning cmp-mixed" id="cmp-mixed" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>
+      <div><strong>У списку товари з різних категорій</strong><span class="t-body-sm c-secondary" id="cmp-mixed-text"></span></div>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp" id="cmp-table"></table>
+    </div>
+    <p class="quiz-result__note">Характеристики наведено за паспортами виробників. Сумісність між собою перевіримо перед оплатою — напишіть інженеру, якщо сумніваєтесь.</p>
+  </div>
+
+  <!-- Порожній список -->
+  <div class="container" id="cmp-empty" hidden>
+    <div class="empty cart-empty">
+      <span class="cart-empty__icon" aria-hidden="true"><svg class="icon"><use href="#i-compare"/></svg></span>
+      <h2 class="t-h3" id="cmp-empty-title">Список порівняння порожній</h2>
+      <p id="cmp-empty-text">Натисніть іконку «порівняти» на картках у каталозі — сюди можна додати до 4 товарів однієї категорії.</p>
+      <div class="cluster" style="justify-content:center"><a href="catalog.html" class="btn btn--primary btn--lg">Перейти в каталог</a><a href="quiz.html" class="btn btn--secondary btn--lg">Підібрати рішення</a></div>
+    </div>
+  </div>
+
+  <!-- Схожі товари -->
+  <section class="section" id="cmp-more">
+    <div class="container">
+      <div class="section-head"><div class="section-head__main"><span class="label-chip">Ще варіанти</span><h2 class="t-h2" id="cmp-more-title">Додайте <span class="t-dim">до порівняння</span></h2></div><a href="catalog.html" class="link-arrow" id="cmp-more-link">Уся категорія <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="product-grid product-grid--4" id="cmp-more-grid"></div>
+    </div>
+  </section>
+</main>

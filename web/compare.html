@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="uk" data-theme="dark" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Прев'ю для замовника: сайт не індексується (див. також vercel.json і robots.txt) -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Порівняння товарів | Lucky Energy</title>
+<meta name="description" content="Порівняйте до 4 інверторів, акумуляторів чи панелей за характеристиками, ціною з монтажем і наявністю.">
+<meta name="theme-color" content="#070A08">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Martian+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/quiz.css">
+<link rel="stylesheet" href="css/compare.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 100 100"><mask id="logo-mark-cut"><rect width="100" height="100" fill="#fff"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.7) translate(-50 -50)" fill="#000" stroke="#000" stroke-width="4" stroke-linejoin="round"/></mask><circle cx="50" cy="50" r="48" fill="currentColor" mask="url(#logo-mark-cut)"/></symbol>
+  <symbol id="logo-mark-outline" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="8"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.68) translate(-50 -50)" fill="currentColor" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+  <symbol id="i-compare" viewBox="0 0 24 24"><path d="M12 4v16M5 8h14M5 8l-2 6h4l-2-6zM19 8l-2 6h4l-2-6z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 13.5h6L10 22l9-12.5h-6.5L13 2z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2.5"/><path d="M22 10.5v3M7 10.5v3M10.5 10.5v3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M12 2l4 8H8l4-8zM8 10l-3 12M16 10l3 12M6.5 16h11M4 6h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5M10 20v-6h4v6"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M3 21h18M9 7.5h3M9 11.5h3M9 15.5h3"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.5h14.8L21 9.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM9.5 20v-5.5h5V20"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-3.5l2-5h12l2 5V16M4 16h16M4 16v2.5M20 16v2.5M7.5 13h.01M16.5 13h.01"/></symbol>
+  <symbol id="i-inverter" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"/><rect x="8.5" y="6.5" width="7" height="5" rx="1"/><path d="M9 16h.01M12 16h.01M15 16h.01"/></symbol>
+  <symbol id="i-catalog" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.2A2.5 2.5 0 0 1 4 13.5v-8z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 20h14"/></symbol>
+  <symbol id="i-pay-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h3"/></symbol>
+  <symbol id="i-pay-parts" viewBox="0 0 24 24"><path d="M21 12c.55 0 1-.45.95-1a10 10 0 0 0-8.95-8.95c-.55-.05-1 .4-1 .95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></symbol>
+  <symbol id="i-pay-invoice" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/></symbol>
+  <symbol id="i-pay-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-del-crew" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+  <symbol id="i-del-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12M3.3 7l8.7 5 8.7-5M7.5 4.27l9 5.15"/></symbol>
+  <symbol id="i-del-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-del-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4.5v5M6 14.5v5"/></symbol>
+</svg>
+
+<a href="#main" class="visually-hidden">Перейти до змісту</a>
+
+<div class="topbar" id="topbar">
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="site-header__logo" aria-label="Lucky Energy — на головну"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark"/></svg>Lucky Energy</a>
+      <nav class="site-header__nav" aria-label="Головна навігація">
+        <a href="catalog.html" aria-current="page">Каталог</a><a href="index.html#scenarios">Рішення</a><a href="index.html#process">Послуги</a><a href="index.html#cases">Кейси</a><a href="index.html#finance">Фінансування</a><a href="blog.html">Блог</a>
+      </nav>
+      <div class="site-header__actions">
+        <a href="tel:0800750120" class="site-header__phone">0 800 750 120</a>
+        <button class="btn btn--ghost btn--icon site-header__hide-sm" aria-label="Пошук"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="btn btn--ghost btn--icon site-header__hide-sm" aria-label="Кабінет"><svg class="icon"><use href="#i-user"/></svg></button>
+        <a href="cart.html" class="btn btn--ghost btn--icon" aria-label="Кошик" style="position:relative"><svg class="icon"><use href="#i-cart"/></svg><span class="cart-count" id="cart-count" hidden>0</span></a>
+        <a href="quiz.html" class="btn btn--primary btn--sm site-header__cta">Підібрати рішення</a>
+        <button class="btn btn--secondary btn--icon site-header__burger" aria-label="Меню" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </header>
+  </div>
+</div>
+
+<main id="main" class="compare-page">
+
+  <section class="page-head page-head--compact">
+    <div class="container">
+      <nav aria-label="Хлібні крихти"><ol class="breadcrumbs"><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li aria-current="page">Порівняння</li></ol></nav>
+      <div class="page-head__row">
+        <h1 class="t-h1">Порівняння <span class="t-dim" id="cmp-count"></span></h1>
+        <div class="cmp-tools" id="cmp-tools">
+          <label class="switch"><input type="checkbox" id="cmp-diff">Лише відмінності</label>
+          <label class="switch"><input type="checkbox" id="cmp-install">Ціни з монтажем</label>
+          <button type="button" class="cart__clear" id="cmp-clear">Очистити список</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Таблиця порівняння -->
+  <div class="container" id="cmp" hidden>
+    <div class="alert alert--warning cmp-mixed" id="cmp-mixed" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>
+      <div><strong>У списку товари з різних категорій</strong><span class="t-body-sm c-secondary" id="cmp-mixed-text"></span></div>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp" id="cmp-table"></table>
+    </div>
+    <p class="quiz-result__note">Характеристики наведено за паспортами виробників. Сумісність між собою перевіримо перед оплатою — напишіть інженеру, якщо сумніваєтесь.</p>
+  </div>
+
+  <!-- Порожній список -->
+  <div class="container" id="cmp-empty" hidden>
+    <div class="empty cart-empty">
+      <span class="cart-empty__icon" aria-hidden="true"><svg class="icon"><use href="#i-compare"/></svg></span>
+      <h2 class="t-h3" id="cmp-empty-title">Список порівняння порожній</h2>
+      <p id="cmp-empty-text">Натисніть іконку «порівняти» на картках у каталозі — сюди можна додати до 4 товарів однієї категорії.</p>
+      <div class="cluster" style="justify-content:center"><a href="catalog.html" class="btn btn--primary btn--lg">Перейти в каталог</a><a href="quiz.html" class="btn btn--secondary btn--lg">Підібрати рішення</a></div>
+    </div>
+  </div>
+
+  <!-- Схожі товари -->
+  <section class="section" id="cmp-more">
+    <div class="container">
+      <div class="section-head"><div class="section-head__main"><span class="label-chip">Ще варіанти</span><h2 class="t-h2" id="cmp-more-title">Додайте <span class="t-dim">до порівняння</span></h2></div><a href="catalog.html" class="link-arrow" id="cmp-more-link">Уся категорія <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="product-grid product-grid--4" id="cmp-more-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__cols">
+      <div class="site-footer__col"><a href="index.html" class="site-header__logo" style="color:var(--color-text)"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark-outline"/></svg>Lucky Energy</a><p class="c-secondary" style="max-width:20rem">Продаж, монтаж і сервіс систем енергонезалежності по всій Україні.</p></div>
+      <div class="site-footer__col"><h3>Каталог</h3><a href="catalog.html?cat=inverters">Інвертори</a><a href="catalog.html?cat=batteries">Акумулятори</a><a href="catalog.html?cat=panels">Сонячні панелі</a><a href="catalog.html?cat=kits">Готові комплекти</a><a href="catalog.html?cat=generators">Генератори</a></div>
+      <div class="site-footer__col"><h3>Рішення і послуги</h3><a href="solution.html?type=apartment">Для квартири</a><a href="solution.html?type=house">Для будинку</a><a href="solution.html?type=business">Для бізнесу</a><a href="index.html#process">Монтаж</a><a href="page.html?id=service">Сервіс і ТО</a></div>
+      <div class="site-footer__col"><h3>Покупцям</h3><a href="page.html?id=delivery">Доставка й оплата</a><a href="page.html?id=warranty">Гарантія</a><a href="page.html?id=returns">Обмін і повернення</a><a href="index.html#finance">Фінансування</a><a href="blog.html">Блог</a></div>
+      <div class="site-footer__col"><h3>Контакти</h3><a href="tel:0800750120" style="font-size:1.25rem;font-weight:600;color:var(--color-text)">0 800 750 120</a><a href="mailto:hello@luckyenergy.com.ua">hello@luckyenergy.com.ua</a><span class="c-tertiary">м. Тернопіль, вул. Промислова, 20 · Пн–Сб 9:00–19:00</span><span class="site-footer__meta"><button type="button" class="lang-switch lang-switch--text" data-lang-switch aria-haspopup="dialog" aria-expanded="false" aria-label="Мова сайту: українська. Змінити мову">UA</button></span></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 Lucky Energy · ТОВ «Лакі Енерджі»</span><span><a href="page.html?id=offer">Публічна оферта</a> · <a href="page.html?id=privacy">Політика конфіденційності</a></span><span>YouTube · Instagram · Facebook · TikTok</span></div>
+  </div>
+  <div class="site-footer__word" aria-hidden="true">
+    <!-- viewBox = природна ширина напису Geologica 700 при 190px (1469) + поля; літери не деформуються -->
+    <svg viewBox="0 0 1485 124" role="presentation" focusable="false"><text x="742.5" y="152" text-anchor="middle">LUCKY ENERGY</text></svg>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Швидка навігація">
+  <a href="catalog.html"><svg class="icon"><use href="#i-catalog"/></svg>Каталог</a>
+  <a href="catalog.html" data-open-search><svg class="icon"><use href="#i-search"/></svg>Пошук</a>
+  <a href="cart.html"><svg class="icon"><use href="#i-cart"/></svg>Кошик</a>
+  <a href="compare.html"><svg class="icon"><use href="#i-compare"/></svg>Порівняти</a>
+  <a href="index.html#lead"><svg class="icon"><use href="#i-chat"/></svg>Зв'язок</a>
+</nav>
+
+<script type="module" src="js/ui.js"></script>
+<script type="module" src="js/topbar.js"></script>
+<script type="module" src="js/compare.js"></script>
+</body>
+</html>

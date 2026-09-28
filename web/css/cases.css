@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Lucky Energy · список кейсів (cases.html). Картки — ті самі .sol-case зі сценарної сторінки (solution.css).
+   ========================================================================== */
+
+.cases { padding-bottom: var(--space-8); }
+.cases__filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4) var(--space-6); padding-block: var(--space-6); border-block: 1px solid var(--color-border-subtle); }
+.cases__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.cases__chips .chip b { margin-left: .25rem; font-family: var(--font-mono); font-size: var(--fs-label); font-weight: var(--fw-regular); color: var(--color-text-tertiary); }
+.cases__chips .chip[aria-pressed="true"] b { color: inherit; opacity: .75; }
+.cases__selects { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.cases__selects .select { width: auto; min-width: 13rem; min-height: var(--control-md); }
+.cases__count { margin-block: var(--space-6) var(--space-8); font-size: var(--fs-body-sm); }
+.cases__grid { row-gap: clamp(2.5rem, 5vw, 4rem); }
+.cases__grid > *[hidden] { display: none; }
+.sol-case__type { position: absolute; top: var(--space-4); left: var(--space-4); z-index: 1; }
+.cases__grid .sol-case__media { position: relative; }
+.cases .empty { margin-top: var(--space-4); }
+.cases .empty[hidden] { display: none; }
+@media (max-width: 639px) {
+  .cases__selects { width: 100%; }
+  .cases__selects .select { flex: 1; min-width: 0; }
+}

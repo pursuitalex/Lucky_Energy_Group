@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Lucky Energy · сценарна сторінка (solution.html?type=apartment|house|business)
+   Один шаблон на три сценарії. У кожній секції — один тип блоків і багато повітря.
+   ========================================================================== */
+
+/* ---------- Перший екран ---------- */
+.sol-hero { padding-bottom: 0; overflow: visible; }
+.sol-hero__head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; }
+.sol-hero__head h1 { text-wrap: balance; }
+.sol-hero__side { display: flex; flex-direction: column; gap: var(--space-6); }
+/* дві кнопки завжди в один рядок */
+.sol-hero__actions { display: flex; flex-wrap: nowrap; gap: var(--space-3); }
+.sol-hero__actions .btn { white-space: nowrap; }
+.sol-switch { margin-top: var(--space-10); align-self: flex-start; }
+.sol-switch .tabs__tab { display: inline-flex; align-items: center; text-decoration: none; }
+.sol-switch .tabs__tab[aria-current="page"] { background: var(--color-accent); color: var(--color-on-accent); }
+.sol-hero__media { margin: var(--space-5) 0 0; aspect-ratio: 21 / 9; overflow: hidden; border-radius: var(--radius-2xl); background: var(--color-surface-1); }
+.sol-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.sol-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--grid-gap); margin: 0; padding-block: var(--space-10); border-bottom: 1px solid var(--color-border-subtle); }
+.sol-facts > div { display: flex; flex-direction: column; gap: var(--space-2); padding-left: var(--space-5); border-left: 2px solid var(--color-border); }
+.sol-facts > div:first-child { border-left-color: var(--color-accent); }
+.sol-facts dd { order: -1; margin: 0; font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem); line-height: 1.1; letter-spacing: var(--ls-heading); white-space: nowrap; }
+.sol-facts dt { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+
+/* ---------- Пакети ---------- */
+.sol-packages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); align-items: stretch; }
+.sol-pack { position: relative; display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-8); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); background: var(--color-surface-1); box-shadow: var(--shadow-inset-hi); }
+.sol-pack--rec { border-color: var(--color-accent-border); background: radial-gradient(80% 50% at 50% 0%, rgba(53, 227, 132, .14), transparent 70%), var(--color-surface-1); box-shadow: var(--glow-accent); }
+.sol-pack__badge { position: absolute; top: var(--space-6); right: var(--space-6); }
+.sol-pack__head { display: flex; flex-direction: column; gap: var(--space-2); padding-right: 6.5rem; }
+.sol-pack__for { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.sol-pack__price { display: flex; flex-direction: column; gap: .125rem; }
+.sol-pack__sum { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(2rem, 1.6rem + 1.4vw, 2.625rem); line-height: 1.05; letter-spacing: var(--ls-display); white-space: nowrap; }
+.sol-pack__sum small { font-family: var(--font-text); font-size: .4em; font-weight: var(--fw-regular); letter-spacing: 0; color: var(--color-text-secondary); }
+.sol-pack__monthly { font-size: var(--fs-body-sm); color: var(--color-accent-text); }
+.sol-pack ul { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.sol-pack__specs { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.sol-pack__specs li { padding: var(--space-3) 0; border-top: 1px dashed var(--color-border); }
+.sol-pack__specs li:last-child { border-bottom: 1px dashed var(--color-border); }
+.sol-pack__auto { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); }
+.sol-pack__auto strong { font-size: 1.125rem; text-align: right; }
+.sol-pack__powers { gap: var(--space-3); font-size: var(--fs-body-sm); }
+.sol-pack__powers li { display: flex; align-items: flex-start; gap: var(--space-3); }
+.sol-pack__powers svg { flex-shrink: 0; box-sizing: content-box; width: .875rem; height: .875rem; margin-top: .0625rem; padding: .25rem; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent-text); stroke-width: 2.5; }
+.sol-pack__powers li.is-off { color: var(--color-text-tertiary); }
+.sol-pack__powers li.is-off svg { background: var(--color-surface-3); color: var(--color-text-tertiary); }
+.sol-pack .btn { margin-top: auto; }
+
+/* ---------- Як це працює ---------- */
+.sol-how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-block: 1px solid var(--color-border-subtle); }
+.sol-how li { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-10) var(--space-8); border-left: 1px solid var(--color-border-subtle); }
+.sol-how li:first-child { padding-left: 0; border-left: 0; }
+.sol-how li:last-child { padding-right: 0; }
+.sol-how svg { box-sizing: content-box; width: 1.75rem; height: 1.75rem; margin-bottom: var(--space-5); padding: 1rem; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent-text); }
+.sol-how strong { font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-h3); letter-spacing: var(--ls-heading); }
+.sol-how span { color: var(--color-text-secondary); }
+
+/* ---------- Монтаж ---------- */
+.sol-install__price { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-4); padding-top: var(--space-6); border-top: 1px solid var(--color-border-subtle); }
+.sol-install__price strong { font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-h2); letter-spacing: var(--ls-heading); }
+.sol-checklist { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-border-subtle); counter-reset: item; }
+.sol-checklist li { counter-increment: item; display: grid; grid-template-columns: 3rem minmax(0, 1fr); align-items: baseline; gap: var(--space-4); padding: var(--space-5) 0; border-bottom: 1px solid var(--color-border-subtle); font-size: 1.125rem; }
+.sol-checklist li::before { content: counter(item, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--fs-label); color: var(--color-accent-text); }
+
+/* ---------- Кейси ---------- */
+.sol-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); }
+.sol-case { display: flex; flex-direction: column; gap: var(--space-4); }
+.sol-case__media { aspect-ratio: 16 / 9; margin-bottom: var(--space-2); overflow: hidden; border-radius: var(--radius-xl); background: var(--color-surface-1); }
+.sol-case__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-reveal) var(--ease-emphasized); }
+.sol-case:hover .sol-case__media img { transform: scale(1.04); }
+.sol-case__metrics { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-10); margin: var(--space-2) 0 0; padding-top: var(--space-5); border-top: 1px solid var(--color-border-subtle); }
+.sol-case__metrics div { display: flex; flex-direction: column; gap: .125rem; }
+.sol-case__metrics dd { margin: 0; font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.375rem; letter-spacing: var(--ls-heading); white-space: nowrap; }
+.sol-case__metrics dt { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+
+/* ---------- Фінансування: один рядок ---------- */
+.sol-finance { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.5rem, 1rem + 2.5vw, 3rem); border-radius: var(--radius-2xl); background: var(--color-cta); color: var(--color-on-cta); text-decoration: none; transition: background-color var(--dur-base); }
+.sol-finance:hover { background: var(--color-cta-hover); }
+.sol-finance__figure { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(3rem, 2rem + 4vw, 5.5rem); line-height: .95; letter-spacing: var(--ls-display); white-space: nowrap; }
+.sol-finance__body { display: flex; flex-direction: column; gap: var(--space-2); max-width: 40rem; }
+.sol-finance__body .c-secondary { color: rgba(4, 19, 11, .74); }
+.sol-finance__cta { display: inline-flex; align-items: center; gap: var(--space-4); font-weight: var(--fw-semibold); white-space: nowrap; }
+.sol-finance .arrow-btn { background: #0B120E; border-color: #0B120E; color: var(--ink-50); }
+
+@media (max-width: 1099px) {
+  .sol-packages { grid-template-columns: minmax(0, 1fr); max-width: 40rem; }
+  .sol-finance { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 899px) {
+  .sol-hero__head { grid-template-columns: minmax(0, 1fr); }
+  .sol-hero__media { aspect-ratio: 16 / 10; border-radius: var(--radius-xl); }
+  .sol-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-8); }
+  .sol-how { grid-template-columns: minmax(0, 1fr); }
+  .sol-how li, .sol-how li:first-child, .sol-how li:last-child { padding: var(--space-8) 0; border-left: 0; border-top: 1px solid var(--color-border-subtle); }
+  .sol-how li:first-child { border-top: 0; }
+  .sol-how svg { margin-bottom: var(--space-3); }
+  .sol-cases { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 639px) {
+  .sol-switch { align-self: stretch; }
+  .sol-switch .tabs__tab { flex: 1; justify-content: center; }
+  .sol-hero__actions .btn { flex: 1; min-width: 0; padding-inline: var(--space-4); font-size: var(--fs-body); }
+  .sol-hero__actions .btn svg { display: none; }
+  .sol-facts dd { white-space: normal; }
+  .sol-pack { padding: var(--space-6); border-radius: var(--radius-lg); }
+  .sol-pack__badge { top: var(--space-5); right: var(--space-5); }
+  .sol-checklist li { grid-template-columns: 2.25rem minmax(0, 1fr); font-size: var(--fs-body); }
+}

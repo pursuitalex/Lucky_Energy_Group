@@ -1,0 +1,4 @@
+# Прев'ю для замовника — сайт не індексується.
+# Основний захист — заголовок X-Robots-Tag (vercel.json) і <meta name="robots"> на кожній сторінці.
+User-agent: *
+Disallow: /

@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Lucky Energy · Layout — спільне для всіх сторінок: плаваюча шапка, футер,
+   нижня панель на мобільному, іконки.
+   ========================================================================== */
+
+/* ---------- Плаваюча шапка ---------- */
+.topbar { position: fixed; inset: var(--space-4) 0 auto 0; z-index: var(--z-sticky); pointer-events: none; }
+.topbar .site-header { pointer-events: auto; transition: background-color var(--dur-base), border-color var(--dur-base), box-shadow var(--dur-base); }
+.topbar.is-stuck .site-header { background: color-mix(in srgb, var(--color-bg-page) 92%, transparent); border-color: var(--color-border); box-shadow: var(--shadow-2); }
+.site-header__phone { font-weight: var(--fw-semibold); text-decoration: none; white-space: nowrap; padding-inline: var(--space-3); }
+@container (max-width: 1240px) { .site-header__phone { display: none; } }
+
+/* ---------- Футер ---------- */
+.site-footer { padding-top: var(--space-20); border-top: 1px solid var(--color-border-subtle); overflow: hidden; }
+.site-footer__cols { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr) 1.3fr; gap: var(--space-10); }
+.site-footer__col { display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--fs-body-sm); }
+.site-footer__col h3 { margin-bottom: var(--space-2); font-size: var(--fs-body); font-weight: var(--fw-semibold); }
+.site-footer__col a { color: var(--color-text-secondary); text-decoration: none; min-height: 1.75rem; }
+.site-footer__col a:hover { color: var(--color-accent-text); }
+/* Великий напис: SVG-текст у природних пропорціях шрифту, лише тонкий приглушений контур.
+   viewBox дорівнює природній ширині напису, тому він займає всю ширину вікна без деформації літер;
+   viewBox нижчий за літери — нижня частина ховається за край сторінки. */
+.site-footer__word { display: block; width: 100%; margin-top: var(--space-12); padding-inline: clamp(.5rem, 1.5vw, 1.5rem); line-height: 0; user-select: none; pointer-events: none; }
+.site-footer__word svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.site-footer__word text { font-family: var(--font-display); font-weight: 700; font-size: 190px; letter-spacing: 0; fill: none; stroke: var(--color-text); stroke-opacity: .16; stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+.site-footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-6); margin-top: var(--space-12); border-top: 1px solid var(--color-border-subtle); font-size: var(--fs-caption); color: var(--color-text-tertiary); }
+.site-footer__bottom a { color: inherit; }
+/* Малопомітний перехід між темним і світлим концептами сайту */
+.site-footer__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-5); color: var(--color-text-tertiary); }
+.site-footer__col .theme-link { display: inline-flex; align-items: center; gap: .375rem; min-height: 0; font-size: var(--fs-caption); color: var(--color-text-tertiary); text-decoration: none; opacity: .75; transition: opacity var(--dur-fast), color var(--dur-fast); }
+.site-footer__col .theme-link:hover, .site-footer__col .theme-link:focus-visible { opacity: 1; color: var(--color-text); }
+.theme-link svg { width: .875rem; height: .875rem; }
+@media (max-width: 1023px) { .site-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } .site-footer__col:first-child { grid-column: 1 / -1; } }
+
+/* ---------- Нижня панель на мобільному ---------- */
+.tabbar { display: none; }
+@media (max-width: 767px) {
+  .tabbar { position: fixed; inset: auto var(--space-3) var(--space-3) var(--space-3); z-index: var(--z-sticky); display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); padding: var(--space-1); border: 1px solid var(--color-border); border-radius: var(--radius-pill); background: color-mix(in srgb, var(--color-surface-1) 92%, transparent); backdrop-filter: blur(16px); box-shadow: var(--shadow-3); }
+  .tabbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .125rem; min-height: 3.5rem; border-radius: var(--radius-pill); font-size: .6875rem; font-weight: var(--fw-medium); text-decoration: none; color: var(--color-text-secondary); }
+  .tabbar a[aria-current="page"], .tabbar a:hover { color: var(--color-accent-text); background: var(--color-accent-soft); }
+  .tabbar svg { width: 1.375rem; height: 1.375rem; }
+  body { padding-bottom: 5.5rem; }
+}
+
+.icon { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Мобільне меню (js/menu.js) ----------
+   Повноекранна панель під шапкою: шапка з логотипом, кошиком і кнопкою закриття лишається на місці. */
+.mnav { position: fixed; inset: 0; padding-top: var(--mnav-top, 6rem); z-index: calc(var(--z-sticky) - 1); overflow-y: auto; overscroll-behavior: contain; background: var(--color-bg-page); opacity: 0; transform: translateY(-.75rem); transition: opacity var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-emphasized); }
+.mnav[hidden] { display: none; }
+.mnav.is-open { opacity: 1; transform: none; }
+.mnav__inner { display: flex; flex-direction: column; gap: var(--space-8); width: min(100%, 36rem); margin-inline: auto; padding: var(--space-4) var(--container-x) var(--space-10); }
+.mnav__search { display: flex; align-items: center; gap: var(--space-3); min-height: var(--control-lg); padding: 0 var(--space-5); border: 1.5px solid var(--color-border); border-radius: var(--radius-pill); background: var(--color-surface-1); color: var(--color-text-tertiary); }
+.mnav__search:focus-within { border-color: var(--color-accent); }
+.mnav__search svg { flex-shrink: 0; width: 1.375rem; height: 1.375rem; }
+.mnav__search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-text); font: inherit; }
+.mnav__search input::placeholder { color: var(--color-text-tertiary); }
+.mnav__group { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+.mnav__label { font-family: var(--font-mono); font-size: var(--fs-label); font-weight: var(--fw-regular); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-text-tertiary); }
+.mnav ul { width: 100%; margin: 0; padding: 0; list-style: none; }
+.mnav__solutions { display: flex; flex-direction: column; border-top: 1px solid var(--color-border-subtle); }
+.mnav__solutions a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-4); min-height: 4.5rem; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border-subtle); text-decoration: none; }
+.mnav__solutions a > svg:first-child { box-sizing: content-box; width: 1.5rem; height: 1.5rem; padding: .75rem; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent-text); }
+.mnav__solutions a > svg:last-child { width: 1.5rem; height: 1.5rem; color: var(--color-accent); }
+.mnav__solutions span { display: flex; flex-direction: column; gap: .125rem; }
+.mnav__solutions strong { font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.375rem; letter-spacing: var(--ls-heading); }
+.mnav__solutions small { font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.mnav__cats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.mnav__cats a { display: flex; align-items: center; gap: var(--space-3); min-height: var(--control-lg); padding: 0 var(--space-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-surface-1); font-size: var(--fs-body-sm); font-weight: var(--fw-semibold); line-height: 1.25; text-decoration: none; }
+.mnav__cats a:active, .mnav__cats a:hover { border-color: var(--color-accent-border); }
+.mnav__cats svg { flex-shrink: 0; width: 1.375rem; height: 1.375rem; color: var(--color-text-secondary); }
+.mnav__links { display: flex; flex-direction: column; border-top: 1px solid var(--color-border-subtle); }
+.mnav__links a { display: flex; align-items: center; min-height: var(--control-lg); border-bottom: 1px solid var(--color-border-subtle); font-size: 1.125rem; font-weight: var(--fw-medium); text-decoration: none; }
+.mnav__links a:hover { color: var(--color-accent-text); }
+.mnav__foot { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+.mnav__phone { font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.75rem; letter-spacing: var(--ls-heading); text-decoration: none; }
+.mnav__note { margin-top: calc(var(--space-2) * -1); font-size: var(--fs-body-sm); color: var(--color-text-secondary); }
+.mnav__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); width: 100%; margin-block: var(--space-2) var(--space-3); }
+.mnav__lang { margin-left: auto; display: inline-flex; }
+/* поки меню відкрите: сторінка не скролиться, нижня панель і липкі панелі покупки не заважають; шапка отримує щільне тло */
+.is-menu-open, .is-menu-open body { overflow: hidden; }
+.is-menu-open .tabbar, .is-menu-open .buy-bar, .is-menu-open .compare-bar { display: none; }
+.is-menu-open .topbar .site-header { background: var(--color-bg-page); border-color: var(--color-border); }
+@media (prefers-reduced-motion: reduce) { .mnav { transition: none; } }
+
+/* ---------- Перемикач мови: одна кнопка з поточною мовою + підтвердження переходу (js/lang.js) ---------- */
+.lang-switch { display: inline-grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0 var(--space-3); border: 1px solid transparent; border-radius: var(--radius-pill); background: var(--color-surface-3); color: var(--color-text); font: inherit; font-size: var(--fs-caption); font-weight: var(--fw-semibold); letter-spacing: .02em; cursor: pointer; transition: border-color var(--dur-fast), background-color var(--dur-fast); }
+.lang-switch:hover, .lang-switch[aria-expanded="true"] { border-color: var(--color-border-strong); }
+.lang-switch:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+/* у футері — як звичайний підпис, без плашки */
+.lang-switch--text { min-width: 0; min-height: 0; padding: .25rem .5rem; margin-left: -.5rem; background: transparent; color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline; text-decoration-color: var(--color-border-strong); text-underline-offset: .25em; }
+.lang-switch--text:hover, .lang-switch--text[aria-expanded="true"] { border-color: transparent; color: var(--color-text); }
+
+.lang-pop { position: fixed; z-index: var(--z-overlay); display: flex; flex-direction: column; gap: var(--space-4); width: min(20rem, calc(100vw - 1.5rem)); padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface-1); color: var(--color-text); box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .28); animation: lang-pop-in var(--dur-fast) var(--ease-emphasized); }
+[data-theme="light"] .lang-pop { box-shadow: 0 1rem 2.5rem rgba(11, 18, 14, .14); }
+.lang-pop__q { margin: 0; font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+.lang-pop__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+@keyframes lang-pop-in { from { opacity: 0; transform: translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { .lang-pop { animation: none; } }

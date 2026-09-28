@@ -1,0 +1,79 @@
+<main id="main" class="case-page">
+
+  <!-- Перший екран: заголовок, велике фото, чотири цифри -->
+  <section class="page-head page-head--compact case-hero">
+    <div class="container">
+      <nav aria-label="Хлібні крихти"><ol class="breadcrumbs"><li><a href="index.html">Головна</a></li><li><a href="cases.html">Кейси</a></li><li aria-current="page" id="case-crumb">…</li></ol></nav>
+      <div class="case-hero__head">
+        <div class="stack" style="--stack-gap:var(--space-4)">
+          <span class="kb-meta" id="case-meta"></span>
+          <h1 class="t-h1" id="case-title">Завантаження…</h1>
+        </div>
+        <p class="t-body-lg c-secondary case-hero__lead" id="case-lead"></p>
+      </div>
+      <figure class="case-hero__media"><img id="case-cover" src="" alt="" width="2200" height="933"></figure>
+      <dl class="sol-facts" id="case-metrics"></dl>
+    </div>
+  </section>
+
+  <!-- Задача і рішення -->
+  <section class="section" id="story">
+    <div class="container split">
+      <div class="stack case-aside" style="--stack-gap:var(--space-5)" data-reveal>
+        <span class="label-chip">Задача</span>
+        <p class="case-task" id="case-task"></p>
+      </div>
+      <div class="stack" style="--stack-gap:var(--space-6)" data-reveal>
+        <h2 class="t-h2">Що зробили</h2>
+        <ol class="case-solution" id="case-solution"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Обладнання: картки з фото товарів -->
+  <section class="section section--alt" id="equipment">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Обладнання</span><h2 class="t-h2">Склад <span class="t-dim">системи</span></h2></div>
+        <p class="section-head__aside" data-reveal>Основні компоненти — з каталогу, з тими самими цінами й характеристиками. Кріплення, кабель і захист підбираємо під об'єкт.</p>
+      </div>
+      <div class="case-equipment" id="case-equipment"></div>
+    </div>
+  </section>
+
+  <!-- Етапи: покроково -->
+  <section class="section" id="steps">
+    <div class="container">
+      <div class="section-head"><div class="section-head__main" data-reveal><span class="label-chip">Як проходило</span><h2 class="t-h2">Від заявки <span class="t-dim">до запуску</span></h2></div></div>
+      <ol class="case-steps" id="case-steps"></ol>
+    </div>
+  </section>
+
+  <!-- Фото -->
+  <section class="section" id="photos">
+    <div class="container">
+      <div class="section-head"><div class="section-head__main" data-reveal><span class="label-chip">Фото</span><h2 class="t-h2">Об'єкт <span class="t-dim">зблизька</span></h2></div><div class="cluster case-gallery__nav" data-reveal><button type="button" class="arrow-btn" id="gal-prev" aria-label="Попереднє фото"><svg class="icon"><use href="#i-arrow-l"/></svg></button><button type="button" class="arrow-btn arrow-btn--filled" id="gal-next" aria-label="Наступне фото"><svg class="icon"><use href="#i-arrow"/></svg></button></div></div>
+      <div class="case-gallery-wrap is-start" id="case-gallery-wrap"><div class="case-gallery" id="case-gallery" tabindex="0" aria-label="Фото об'єкта, гортайте вбік"></div></div>
+    </div>
+  </section>
+
+  <!-- Відгук -->
+  <section class="section section--alt" id="review">
+    <div class="container">
+      <figure class="case-review" data-reveal>
+        <span class="label-chip">Відгук власника</span>
+        <blockquote id="case-review-text"></blockquote>
+        <figcaption class="trust__person"><span class="trust__avatar"></span><span><strong id="case-review-name"></strong><br><span class="t-body-sm c-secondary" id="case-review-role"></span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Заклик + інші кейси -->
+  <section class="section" id="more">
+    <div class="container">
+      <aside class="grid-help" data-reveal><div><h3 class="t-h3" id="case-cta-title">Хочете так само?</h3><p>Надішліть перелік приладів або фото щитка — інженер порахує систему для вашого об'єкта. Відповідь протягом 2 годин, розрахунок безкоштовний.</p></div><div class="cluster"><a href="index.html#lead" class="btn btn--dark btn--lg">Отримати розрахунок <svg class="icon"><use href="#i-arrow"/></svg></a><a href="quiz.html" class="btn btn--secondary btn--lg case-cta-quiz">Пройти підбір</a></div></aside>
+      <div class="section-head" style="margin-top:var(--space-16)"><div class="section-head__main" data-reveal><span class="label-chip">Інші кейси</span><h2 class="t-h2">Ще <span class="t-dim">реалізовані об'єкти</span></h2></div><a href="cases.html" class="link-arrow" data-reveal>Усі кейси <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="sol-cases" id="case-next"></div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Lucky Energy · Design tokens · темна тема (концепт B) + світла тема (концепт A)
+   Три шари: 1) примітиви (палітра)  2) семантичні токени  3) шкали.
+   Компоненти використовують ЛИШЕ семантичні токени та шкали —
+   тоді світла тема = інший набір значень у [data-theme="light"].
+   ========================================================================== */
+
+:root {
+  /* ---------- 1. Примітиви: нейтральні із зеленим підтоном ---------- */
+  --ink-950: #070A08;
+  --ink-900: #0C110E;
+  --ink-850: #121814;
+  --ink-800: #18201B;
+  --ink-750: #212B25;
+  --ink-700: #2B3730;
+  --ink-600: #3D4C43;
+  --ink-500: #56665C;
+  --ink-400: #74827A;
+  --ink-300: #A7B3AB;
+  --ink-200: #CBD4CE;
+  --ink-100: #E4EAE6;
+  --ink-50:  #F1F5F2;
+  --paper:   #EEF3EF;
+
+  /* ---------- Примітиви: зелений акцент ---------- */
+  --green-50:  #E9FFF3;
+  --green-100: #C6FBDD;
+  --green-200: #8FF5BC;
+  --green-300: #5BEE9D;
+  --green-400: #35E384;   /* основний акцент */
+  --green-500: #1FC96D;
+  --green-600: #14A557;
+  --green-700: #0F7F44;
+  --green-800: #0E5C34;
+  --green-900: #0B3D25;
+  --green-950: #07251A;
+
+  /* ---------- Примітиви: сигнальні та «енергетичні» ---------- */
+  --amber-400: #FFC24B;   /* сонце, генерація, попередження */
+  --blue-400:  #5AA9FF;   /* мережа, інформація */
+  --teal-400:  #3CD6D0;   /* зарядка авто */
+  --red-400:   #FF6B5E;   /* помилка, відключення */
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ---------- 2. Семантичні кольори ---------- */
+  /* Тло й поверхні: що вище поверхня — то світліша */
+  --color-bg-page:        var(--ink-950);
+  --color-bg-alt:         var(--ink-900);
+  --color-surface-1:      var(--ink-850);
+  --color-surface-2:      var(--ink-800);
+  --color-surface-3:      var(--ink-750);
+  --color-bg-inverse:     var(--paper);      /* світлий контрастний блок */
+  --color-overlay:        rgba(7, 10, 8, .72);
+
+  /* Лінії */
+  --color-border-subtle:  #1F2923;
+  --color-border:         var(--ink-700);
+  --color-border-strong:  var(--ink-600);
+
+  /* Текст */
+  --color-text:           var(--ink-50);
+  --color-text-secondary: var(--ink-300);
+  --color-text-tertiary:  var(--ink-400);
+  --color-text-disabled:  var(--ink-500);
+  --color-text-inverse:   #0B120E;
+  --color-text-inverse-secondary: #46544B;
+
+  /* Акцент */
+  --color-accent:         var(--green-400);
+  --color-accent-hover:   var(--green-300);
+  --color-accent-pressed: var(--green-500);
+  --color-on-accent:      #04130B;
+  --color-accent-text:    var(--green-300);              /* зелений текст/посилання на темному */
+  --color-accent-soft:    rgba(53, 227, 132, .12);       /* заливка чіпів, бейджів */
+  --color-accent-soft-hover: rgba(53, 227, 132, .18);
+  --color-accent-border:  rgba(53, 227, 132, .38);
+  --color-focus:          var(--green-300);
+  /* Головна кнопка: окремі токени, бо у світлій темі акцент темніший, а кнопка лишається фірмово-зеленою */
+  --color-cta:            var(--green-400);
+  --color-cta-hover:      var(--green-300);
+  --color-cta-pressed:    var(--green-500);
+  --color-on-cta:         #04130B;
+
+  /* Стани */
+  --color-success:        var(--green-400);
+  --color-warning:        var(--amber-400);
+  --color-danger:         var(--red-400);
+  --color-info:           var(--blue-400);
+  --color-warning-soft:   rgba(255, 194, 75, .12);
+  --color-danger-soft:    rgba(255, 107, 94, .12);
+  --color-info-soft:      rgba(90, 169, 255, .12);
+
+  /* Потоки енергії (схеми, графіки) */
+  --color-energy-solar:   var(--amber-400);
+  --color-energy-battery: var(--green-400);
+  --color-energy-grid:    var(--blue-400);
+  --color-energy-home:    var(--ink-100);
+  --color-energy-ev:      var(--teal-400);
+
+  /* ---------- Тіні та світіння (на темному працює світло, а не тінь) ---------- */
+  --shadow-inset-hi:  inset 0 1px 0 rgba(255, 255, 255, .05);
+  --shadow-1:         0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-2:         0 16px 40px -16px rgba(0, 0, 0, .65);
+  --shadow-3:         0 32px 80px -24px rgba(0, 0, 0, .8);
+  --glow-accent:      0 0 0 1px var(--color-accent-border), 0 12px 48px -12px rgba(53, 227, 132, .45);
+  --glow-accent-sm:   0 6px 24px -8px rgba(53, 227, 132, .55);
+}
+
+/* ==========================================================================
+   Світла тема (концепт A). Вмикається атрибутом data-theme="light" на <html>
+   або на будь-якому блоці. Темні контрастні блоки всередині світлої сторінки —
+   це просто data-theme="dark" на секції: токени перевизначаються локально.
+   ========================================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg-page:        #F5F8F6;
+  --color-bg-alt:         #EBF0EC;
+  --color-surface-1:      #FFFFFF;
+  --color-surface-2:      #F2F6F3;
+  --color-surface-3:      #E4EBE6;
+  --color-bg-inverse:     var(--ink-950);
+  --color-overlay:        rgba(7, 10, 8, .6);
+
+  --color-border-subtle:  #E1E8E3;
+  --color-border:         #CBD5CE;
+  --color-border-strong:  #94A39A;
+
+  --color-text:           #0B120E;
+  --color-text-secondary: #46544B;
+  --color-text-tertiary:  #5F6E65;
+  --color-text-disabled:  #9AA59E;
+  --color-text-inverse:   var(--ink-50);
+  --color-text-inverse-secondary: var(--ink-300);
+
+  --color-accent:         var(--green-600);   /* тонкі елементи на білому: рамки, радіо, іконки (контраст ≥ 3:1) */
+  --color-accent-hover:   var(--green-700);
+  --color-accent-pressed: var(--green-800);
+  --color-on-accent:      #FFFFFF;
+  --color-accent-text:    var(--green-700);   /* зелений текст на світлому (контраст ≥ 4.5:1) */
+  --color-accent-soft:    var(--green-50);
+  --color-accent-soft-hover: var(--green-100);
+  --color-accent-border:  var(--green-600);
+  --color-focus:          var(--green-700);
+
+  --color-cta:            var(--green-400);
+  --color-cta-hover:      var(--green-300);
+  --color-cta-pressed:    var(--green-500);
+  --color-on-cta:         #04130B;
+
+  /* Глибокий зелений — суцільні акцентні картки світлої теми (замість другого кольору) */
+  --color-deep:           var(--green-900);
+  --color-deep-hover:     var(--green-950);
+  --color-on-deep:        #FFFFFF;
+  --color-on-deep-secondary: rgba(255, 255, 255, .74);
+
+  --color-success:        var(--green-700);
+  --color-warning:        #A86400;
+  --color-danger:         #C9352A;
+  --color-info:           var(--ink-600);       /* у світлій темі інформаційний стан нейтральний, без синього */
+  --color-warning-soft:   #FFF3DC;
+  --color-danger-soft:    #FDE9E7;
+  --color-info-soft:      var(--ink-100);
+
+  --color-energy-solar:   #E39A00;
+  --color-energy-battery: var(--green-600);
+  --color-energy-grid:    var(--ink-500);
+  --color-energy-home:    var(--ink-800);
+  --color-energy-ev:      #0E9C96;
+
+  /* На світлому працює тінь, а не світіння */
+  --shadow-inset-hi:  inset 0 1px 0 rgba(255, 255, 255, .9);
+  --shadow-1:         0 1px 2px rgba(11, 18, 14, .06);
+  --shadow-2:         0 18px 40px -20px rgba(11, 18, 14, .22);
+  --shadow-3:         0 36px 80px -32px rgba(11, 18, 14, .30);
+  --glow-accent:      0 0 0 1px var(--green-600), 0 14px 32px -16px rgba(20, 165, 87, .45);
+  --glow-accent-sm:   0 10px 24px -12px rgba(15, 127, 68, .55);
+}
+
+:root {
+  /* ---------- 3. Типографіка ---------- */
+  --font-display: "Geologica", "Onest", system-ui, sans-serif;  /* hero, H1–H2, великі цифри */
+  --fw-display: 600;
+  --font-text:    "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "Martian Mono", ui-monospace, "SFMono-Regular", monospace; /* мітки, характеристики */
+
+  --fs-display: clamp(2.5rem, 1.35rem + 4.6vw, 4.5rem);   /* 40 → 72 */
+  --fs-h1:      clamp(2.125rem, 1.4rem + 3vw, 3.5rem);    /* 34 → 56 */
+  --fs-h2:      clamp(1.75rem, 1.3rem + 1.9vw, 2.625rem); /* 28 → 42 */
+  --fs-h3:      clamp(1.375rem, 1.2rem + .7vw, 1.75rem);  /* 22 → 28 */
+  --fs-h4:      1.375rem;   /* 22 */
+  --fs-body-lg: 1.25rem;    /* 20 */
+  --fs-body:    1.0625rem;  /* 17 — базовий, свідомо більший за 16 */
+  --fs-body-sm: .9375rem;   /* 15 */
+  --fs-caption: .8125rem;   /* 13 */
+  --fs-label:   .6875rem;   /* 11, моно, uppercase (Martian Mono широкий) */
+
+  --lh-tight:   1.04;
+  --lh-heading: 1.14;
+  --lh-snug:    1.3;
+  --lh-body:    1.6;
+
+  --ls-display: -.03em;
+  --ls-heading: -.02em;
+  --ls-label:   .04em;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+  --fw-bold:    700;
+
+  /* ---------- Відступи (крок 4 px) ---------- */
+  --space-0: 0;
+  --space-1: .25rem;   /* 4 */
+  --space-2: .5rem;    /* 8 */
+  --space-3: .75rem;   /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.25rem;  /* 20 */
+  --space-6: 1.5rem;   /* 24 */
+  --space-8: 2rem;     /* 32 */
+  --space-10: 2.5rem;  /* 40 */
+  --space-12: 3rem;    /* 48 */
+  --space-16: 4rem;    /* 64 */
+  --space-20: 5rem;    /* 80 */
+  --space-24: 6rem;    /* 96 */
+  --space-32: 8rem;    /* 128 */
+
+  --section-y:     clamp(3.5rem, 2rem + 6vw, 6rem);     /* 56 → 96 */
+  --container-max: 80rem;                               /* 1280 */
+  --container-x:   clamp(1.25rem, .2rem + 4.4vw, 5rem); /* 20 → 80 */
+  --grid-gap:      clamp(1rem, .7rem + 1vw, 1.5rem);    /* 16 → 24 */
+
+  /* ---------- Радіуси: заокруглення — підпис стилю ---------- */
+  --radius-xs:   .5rem;    /* 8  — бейджі, дрібні елементи */
+  --radius-sm:   .75rem;   /* 12 — іконки-плитки, тултипи */
+  --radius-md:   1rem;     /* 16 — поля, плитки вибору */
+  --radius-lg:   1.5rem;   /* 24 — картки */
+  --radius-xl:   2rem;     /* 32 — великі медіакартки, секції-контейнери */
+  --radius-2xl:  2.5rem;   /* 40 — hero-контейнери */
+  --radius-pill: 999px;    /* кнопки, чіпи, вкладки */
+
+  /* ---------- Розміри елементів керування (крупні) ---------- */
+  --control-sm: 2.75rem;   /* 44 */
+  --control-md: 3.25rem;   /* 52 */
+  --control-lg: 3.75rem;   /* 60 */
+  --tap-min:    3rem;      /* 48 — мінімальна зона дотику */
+
+  /* ---------- Рух ---------- */
+  --dur-fast:   150ms;   /* hover, натискання */
+  --dur-base:   250ms;   /* перемикання станів, вкладки */
+  --dur-slow:   450ms;   /* акордеон, модальні вікна */
+  --dur-reveal: 800ms;   /* поява блоків при скролі */
+  --ease-standard:   cubic-bezier(.2, .8, .2, 1);
+  --ease-emphasized: cubic-bezier(.16, 1, .3, 1);
+  --ease-exit:       cubic-bezier(.4, 0, 1, 1);
+  --reveal-distance: 28px;
+  --reveal-stagger:  90ms;
+
+  /* ---------- Шари ---------- */
+  --z-sticky: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+    --reveal-distance: 0px;
+    --reveal-stagger: 0ms;
+  }
+}

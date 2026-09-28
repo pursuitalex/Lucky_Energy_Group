@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="uk" data-theme="dark" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Прев'ю для замовника: сайт не індексується (див. також vercel.json і robots.txt) -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Lucky Energy · Дизайн-система · Dark</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Onest:wght@400;500;600;700&family=Geologica:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+/* Стилі лише цієї сторінки-довідника */
+.sg { display: grid; grid-template-columns: 17rem minmax(0, 1fr); min-height: 100vh; }
+.sg-nav { position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto; padding: var(--space-8) var(--space-6); border-right: 1px solid var(--color-border-subtle); display: flex; flex-direction: column; gap: var(--space-8); }
+.sg-nav ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .125rem; }
+.sg-nav a { display: flex; align-items: center; min-height: 2.75rem; padding: 0 var(--space-4); border-radius: var(--radius-pill); text-decoration: none; color: var(--color-text-secondary); font-size: var(--fs-body-sm); font-weight: var(--fw-medium); }
+.sg-nav a:hover { background: var(--color-surface-2); color: var(--color-text); }
+.sg-main { padding: var(--space-12) clamp(1.25rem, 4vw, 4.5rem) var(--space-32); display: flex; flex-direction: column; gap: var(--space-24); max-width: 86rem; }
+.sg-section { display: flex; flex-direction: column; gap: var(--space-8); scroll-margin-top: var(--space-8); }
+.sg-section > header { display: flex; flex-direction: column; gap: var(--space-4); padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-border-subtle); }
+.sg-block { display: flex; flex-direction: column; gap: var(--space-5); }
+.sg-block > h3 { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-text-tertiary); font-weight: 400; }
+.sg-demo { padding: var(--space-8); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-bg-alt); }
+.sg-note { max-width: 46rem; color: var(--color-text-secondary); }
+.sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: var(--space-4); }
+.sg-swatch { display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--fs-caption); }
+.sg-swatch i { display: block; height: 4.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.sg-swatch code, .sg-code { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--color-text-tertiary); }
+.sg-type { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--space-4) var(--space-8); align-items: baseline; padding: var(--space-5) 0; border-bottom: 1px solid var(--color-border-subtle); }
+.sg-scale { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-5); }
+.sg-scale div { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+.sg-scale i { display: block; background: var(--color-accent-soft); border: 1px solid var(--color-accent-border); }
+.sg-radius i { width: 6rem; height: 6rem; }
+.sg-states { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: var(--space-6); align-items: end; }
+.sg-states > div { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+.sg-motion { width: 3.5rem; height: 3.5rem; border-radius: var(--radius-md); background: var(--color-accent); transition: transform var(--dur-reveal) var(--ease-emphasized); }
+.sg-demo:hover .sg-motion { transform: translateX(14rem); }
+.sg-demo:hover .sg-motion--std { transition: transform var(--dur-base) var(--ease-standard); }
+.icon { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.is-focus { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+@media (max-width: 899px) { .sg { grid-template-columns: minmax(0, 1fr); } .sg-nav { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--color-border-subtle); } .sg-nav ul { flex-direction: row; flex-wrap: wrap; } .sg-type { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 100 100"><mask id="logo-mark-cut"><rect width="100" height="100" fill="#fff"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.7) translate(-50 -50)" fill="#000" stroke="#000" stroke-width="4" stroke-linejoin="round"/></mask><circle cx="50" cy="50" r="48" fill="currentColor" mask="url(#logo-mark-cut)"/></symbol>
+  <symbol id="logo-mark-outline" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="8"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.68) translate(-50 -50)" fill="currentColor" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 9.5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19L12 3zM12 10v4.5M12 17.5v.01"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 13.5h6L10 22l9-12.5h-6.5L13 2z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2.5"/><path d="M22 10.5v3M7 10.5v3M10.5 10.5v3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M12 2l4 8H8l4-8zM8 10l-3 12M16 10l3 12M6.5 16h11M4 6h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5M10 20v-6h4v6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M3 21h18M9 7.5h3M9 11.5h3M9 15.5h3"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.5h14.8L21 9.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM9.5 20v-5.5h5V20"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-3.5l2-5h12l2 5V16M4 16h16M4 16v2.5M20 16v2.5M7.5 13h.01M16.5 13h.01"/></symbol>
+</svg>
+
+<div class="sg">
+  <nav class="sg-nav" aria-label="Розділи дизайн-системи">
+    <a href="#top" class="site-header__logo" style="padding:0"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark"/></svg>Lucky Energy</a>
+    <ul>
+      <li><a href="#principles">Принципи</a></li>
+      <li><a href="#color">Колір</a></li>
+      <li><a href="#type">Типографіка</a></li>
+      <li><a href="#space">Відступи і радіуси</a></li>
+      <li><a href="#motion">Рух і глибина</a></li>
+      <li><a href="#buttons">Кнопки</a></li>
+      <li><a href="#forms">Форми</a></li>
+      <li><a href="#chips">Чіпи, бейджі, вкладки</a></li>
+      <li><a href="#cards">Картки</a></li>
+      <li><a href="#nav">Навігація</a></li>
+      <li><a href="#disclosure">Акордеон і кроки</a></li>
+      <li><a href="#energy">Схема енергії</a></li>
+      <li><a href="#feedback">Повідомлення</a></li>
+      <li><a href="#patterns">Патерни</a></li>
+    </ul>
+    <p class="t-caption c-tertiary">v0.1 · Dark · 21.09.2026</p>
+  </nav>
+
+  <main class="sg-main" id="top">
+
+    <section class="hero" data-reveal>
+      <span class="label-chip">Дизайн-система · темна версія</span>
+      <h1 class="t-display" style="max-width:52rem">Своя енергія. <span class="t-dim">Під ключ.</span></h1>
+      <p class="t-body-lg c-secondary" style="max-width:36rem">Глибокий зелено-чорний фон, м'які заокруглення та один зелений акцент, що світиться там, де потрібна дія.</p>
+      <div class="cluster">
+        <a href="#buttons" class="btn btn--primary btn--lg">Підібрати рішення</a>
+        <a href="#cards" class="btn btn--secondary btn--lg">Каталог</a>
+      </div>
+    </section>
+
+    <!-- ПРИНЦИПИ -->
+    <section class="sg-section" id="principles">
+      <header><span class="label-chip">01</span><h2 class="t-h2">Принципи</h2></header>
+      <div class="divided" style="--cols:4">
+        <div class="stack"><h3 class="t-h4">Один акцент</h3><p class="t-body-sm c-secondary">Зелений — лише для дії та «живої» енергії: основна кнопка, вибраний стан, потік на схемі. Не більше однієї зеленої кнопки на екран.</p></div>
+        <div class="stack"><h3 class="t-h4">Заокруглення як підпис</h3><p class="t-body-sm c-secondary">Кнопки й чіпи — пігулки. Поля 16, картки 24, медіаблоки 32–40. Вкладений елемент має менший радіус, ніж контейнер.</p></div>
+        <div class="stack"><h3 class="t-h4">Усе крупне</h3><p class="t-body-sm c-secondary">Текст від 17 px, кнопки 52–60 px, зона дотику не менше 48 px. Краще менше елементів, але більших.</p></div>
+        <div class="stack"><h3 class="t-h4">Світло замість тіней</h3><p class="t-body-sm c-secondary">Глибину дає світліша поверхня, тонка лінія та м'яке зелене світіння. Рух спокійний: поява знизу, без різких ефектів.</p></div>
+      </div>
+    </section>
+
+    <!-- КОЛІР -->
+    <section class="sg-section" id="color">
+      <header><span class="label-chip">02</span><h2 class="t-h2">Колір</h2><p class="sg-note">Нейтральні мають зелений підтон — тло не «мертво-чорне», а акцент виглядає рідним. Компоненти звертаються лише до семантичних токенів.</p></header>
+      <div class="sg-block"><h3>Тло і поверхні</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><i style="background:var(--color-bg-page)"></i><b>Page</b><code>--color-bg-page · #070A08</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-bg-alt)"></i><b>Alt section</b><code>--color-bg-alt · #0C110E</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-surface-1)"></i><b>Surface 1</b><code>--color-surface-1 · #121814</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-surface-2)"></i><b>Surface 2</b><code>--color-surface-2 · #18201B</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-surface-3)"></i><b>Surface 3</b><code>--color-surface-3 · #212B25</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-bg-inverse)"></i><b>Inverse</b><code>--color-bg-inverse · #EEF3EF</code></div>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Акцент · зелений</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><i style="background:var(--green-200)"></i><b>200</b><code>#8FF5BC</code></div>
+          <div class="sg-swatch"><i style="background:var(--green-300)"></i><b>300 · hover, текст</b><code>--color-accent-hover</code></div>
+          <div class="sg-swatch"><i style="background:var(--green-400);box-shadow:var(--glow-accent)"></i><b>400 · акцент</b><code>--color-accent · #35E384</code></div>
+          <div class="sg-swatch"><i style="background:var(--green-500)"></i><b>500 · pressed</b><code>--color-accent-pressed</code></div>
+          <div class="sg-swatch"><i style="background:var(--green-700)"></i><b>700</b><code>#0F7F44</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-accent-soft);border-color:var(--color-accent-border)"></i><b>Soft + border</b><code>--color-accent-soft</code></div>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Текст і лінії</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><i style="background:var(--color-text)"></i><b>Text · 18.6:1</b><code>--color-text</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-text-secondary)"></i><b>Secondary · 9.3:1</b><code>--color-text-secondary</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-text-tertiary)"></i><b>Tertiary · 5.0:1</b><code>--color-text-tertiary</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-border-subtle)"></i><b>Border subtle</b><code>--color-border-subtle</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-border)"></i><b>Border</b><code>--color-border</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-border-strong)"></i><b>Border strong</b><code>--color-border-strong</code></div>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Стани та потоки енергії</h3>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><i style="background:var(--color-energy-solar)"></i><b>Сонце · warning</b><code>--color-energy-solar</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-energy-battery)"></i><b>АКБ · success</b><code>--color-energy-battery</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-energy-grid)"></i><b>Мережа · info</b><code>--color-energy-grid</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-energy-ev)"></i><b>Зарядка авто</b><code>--color-energy-ev</code></div>
+          <div class="sg-swatch"><i style="background:var(--color-danger)"></i><b>Danger</b><code>--color-danger</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТИПОГРАФІКА -->
+    <section class="sg-section" id="type">
+      <header><span class="label-chip">03</span><h2 class="t-h2">Типографіка</h2><p class="sg-note">Geologica — для hero, H1–H2 і великих цифр: геометричний гротеск із м'якими формами, компактний навіть на довгих українських словах. Onest — увесь інший текст. Martian Mono — мітки й характеристики.</p></header>
+      <div>
+        <div class="sg-type"><span class="sg-code">.t-display · 40→72</span><p class="t-display">Енергія без пауз</p></div>
+        <div class="sg-type"><span class="sg-code">.t-h1 · 34→56</span><p class="t-h1">Готові рішення з монтажем</p></div>
+        <div class="sg-type"><span class="sg-code">.t-h2 · 28→42</span><p class="t-h2">Від заявки до запуску <span class="t-dim">за лічені дні</span></p></div>
+        <div class="sg-type"><span class="sg-code">.t-h3 · 22→28 · Onest 600</span><p class="t-h3">Гібридна станція для будинку</p></div>
+        <div class="sg-type"><span class="sg-code">.t-h4 · 22</span><p class="t-h4">Гарантія на монтаж у договорі</p></div>
+        <div class="sg-type"><span class="sg-code">.t-body-lg · 20</span><p class="t-body-lg c-secondary">Підбираємо, постачаємо офіційне обладнання, монтуємо власними бригадами й обслуговуємо після запуску.</p></div>
+        <div class="sg-type"><span class="sg-code">.t-body · 17</span><p>Базовий текст сайту. Свідомо більший за звичні 16 px — читати зручно і на смартфоні, і на великому екрані.</p></div>
+        <div class="sg-type"><span class="sg-code">.t-body-sm · 15</span><p class="t-body-sm c-secondary">Другорядні пояснення, підписи в картках, підказки до полів.</p></div>
+        <div class="sg-type"><span class="sg-code">.t-label · 12 mono</span><p class="t-label c-secondary">Гібридний інвертор · 3 фази · 48 В</p></div>
+        <div class="sg-type"><span class="sg-code">.t-num</span><p class="t-num" style="font-size:3rem">12.5 <span class="c-accent">кВт</span></p></div>
+      </div>
+    </section>
+
+    <!-- ВІДСТУПИ -->
+    <section class="sg-section" id="space">
+      <header><span class="label-chip">04</span><h2 class="t-h2">Відступи і радіуси</h2></header>
+      <div class="sg-block"><h3>Шкала відступів · крок 4 px</h3>
+        <div class="sg-demo sg-scale">
+          <div><i style="width:4px;height:4px"></i><code class="sg-code">1·4</code></div>
+          <div><i style="width:8px;height:8px"></i><code class="sg-code">2·8</code></div>
+          <div><i style="width:12px;height:12px"></i><code class="sg-code">3·12</code></div>
+          <div><i style="width:16px;height:16px"></i><code class="sg-code">4·16</code></div>
+          <div><i style="width:24px;height:24px"></i><code class="sg-code">6·24</code></div>
+          <div><i style="width:32px;height:32px"></i><code class="sg-code">8·32</code></div>
+          <div><i style="width:48px;height:48px"></i><code class="sg-code">12·48</code></div>
+          <div><i style="width:64px;height:64px"></i><code class="sg-code">16·64</code></div>
+          <div><i style="width:96px;height:96px"></i><code class="sg-code">24·96</code></div>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Радіуси</h3>
+        <div class="sg-demo sg-scale sg-radius">
+          <div><i style="border-radius:var(--radius-xs)"></i><code class="sg-code">xs · 8 · бейдж</code></div>
+          <div><i style="border-radius:var(--radius-sm)"></i><code class="sg-code">sm · 12</code></div>
+          <div><i style="border-radius:var(--radius-md)"></i><code class="sg-code">md · 16 · поле</code></div>
+          <div><i style="border-radius:var(--radius-lg)"></i><code class="sg-code">lg · 24 · картка</code></div>
+          <div><i style="border-radius:var(--radius-xl)"></i><code class="sg-code">xl · 32 · медіа</code></div>
+          <div><i style="border-radius:var(--radius-2xl)"></i><code class="sg-code">2xl · 40 · hero</code></div>
+          <div><i style="border-radius:var(--radius-pill);width:9rem;height:3.25rem"></i><code class="sg-code">pill · кнопка</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РУХ -->
+    <section class="sg-section" id="motion">
+      <header><span class="label-chip">05</span><h2 class="t-h2">Рух і глибина</h2><p class="sg-note">Наведіть курсор на блок: верхній квадрат — поява (800 мс, emphasized), нижній — перемикання стану (250 мс, standard). За <code class="sg-code">prefers-reduced-motion</code> усі тривалості стають 0.</p></header>
+      <div class="sg-demo stack"><div class="sg-motion"></div><div class="sg-motion sg-motion--std" style="background:var(--color-surface-3);border:1.5px solid var(--color-accent)"></div></div>
+      <div class="grid grid--3">
+        <div class="card"><span class="t-label c-tertiary">Рівень 1</span><p class="t-body-sm c-secondary">Surface 1 + тонка лінія + внутрішній відблиск.</p></div>
+        <div class="card" style="background:var(--color-surface-2);border-color:var(--color-border-strong);box-shadow:var(--shadow-inset-hi),var(--shadow-2)"><span class="t-label c-tertiary">Рівень 2 · hover</span><p class="t-body-sm c-secondary">Світліша поверхня, сильніша лінія, м'яка тінь, зсув −4 px.</p></div>
+        <div class="card" style="box-shadow:var(--glow-accent);border-color:transparent"><span class="t-label c-tertiary">Акцентне світіння</span><p class="t-body-sm c-secondary">Лише для вибраного стану та ключової пропозиції.</p></div>
+      </div>
+    </section>
+
+    <!-- КНОПКИ -->
+    <section class="sg-section" id="buttons">
+      <header><span class="label-chip">06</span><h2 class="t-h2">Кнопки</h2></header>
+      <div class="sg-block"><h3>Варіанти</h3>
+        <div class="sg-demo cluster" style="--cluster-gap:var(--space-4)">
+          <button class="btn btn--primary">Купити</button>
+          <button class="btn btn--secondary">У каталог</button>
+          <button class="btn btn--ghost">Детальніше</button>
+          <button class="btn btn--inverse">На фото</button>
+          <a href="#" class="link-arrow">Усі кейси <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <button class="arrow-btn" aria-label="Далі"><svg class="icon"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn--secondary btn--icon" aria-label="Кошик"><svg class="icon"><use href="#i-cart"/></svg></button>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Розміри · 60 / 52 / 44</h3>
+        <div class="sg-demo cluster" style="--cluster-gap:var(--space-4)">
+          <button class="btn btn--primary btn--lg">Підібрати рішення <svg class="icon"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn--primary">Отримати розрахунок</button>
+          <button class="btn btn--primary btn--sm">У кошик</button>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Стани основної кнопки</h3>
+        <div class="sg-demo sg-states">
+          <div><button class="btn btn--primary">Купити</button><code class="sg-code">default</code></div>
+          <div><button class="btn btn--primary" style="background:var(--color-accent-hover);box-shadow:var(--glow-accent-sm)">Купити</button><code class="sg-code">hover</code></div>
+          <div><button class="btn btn--primary" style="background:var(--color-accent-pressed);transform:scale(.98)">Купити</button><code class="sg-code">pressed</code></div>
+          <div><button class="btn btn--primary is-focus">Купити</button><code class="sg-code">focus-visible</code></div>
+          <div><button class="btn btn--primary is-loading">Купити</button><code class="sg-code">loading</code></div>
+          <div><button class="btn btn--primary" disabled>Купити</button><code class="sg-code">disabled</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОРМИ -->
+    <section class="sg-section" id="forms">
+      <header><span class="label-chip">07</span><h2 class="t-h2">Форми</h2><p class="sg-note">Поля 60 px заввишки, підпис завжди над полем, помилка — текстом під полем, а не лише кольором.</p></header>
+      <div class="sg-demo grid grid--3">
+        <div class="field"><label class="field__label" for="sg-name">Ім'я</label><input class="input" id="sg-name" placeholder="Як до вас звертатися"><span class="field__hint">Лише для звернення</span></div>
+        <div class="field is-error"><label class="field__label" for="sg-tel">Телефон</label><input class="input" id="sg-tel" value="+380 67" aria-invalid="true" aria-describedby="sg-tel-e"><span class="field__error" id="sg-tel-e">Введіть номер повністю: +380 XX XXX XX XX</span></div>
+        <div class="field"><label class="field__label" for="sg-obj">Тип об'єкта</label><select class="select" id="sg-obj"><option>Приватний будинок</option><option>Квартира</option><option>Бізнес</option></select></div>
+        <div class="field" style="grid-column:span 2"><label class="field__label" for="sg-msg">Коментар</label><textarea class="textarea" id="sg-msg" placeholder="Що має працювати під час відключень?"></textarea></div>
+        <div class="stack" style="--stack-gap:var(--space-1)">
+          <label class="check"><input type="checkbox" checked>З монтажем</label>
+          <label class="check"><input type="checkbox">Сервісний пакет</label>
+          <label class="check"><input type="radio" name="sg-r" checked>Дзвінок</label>
+          <label class="check"><input type="radio" name="sg-r">Telegram</label>
+          <label class="switch"><input type="checkbox" role="switch" checked>Ціни з ПДВ</label>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Пошук і кількість</h3>
+        <div class="sg-demo cluster" style="--cluster-gap:var(--space-6)">
+          <label class="search" style="flex:1 1 22rem"><span class="visually-hidden">Пошук</span><svg class="icon"><use href="#i-search"/></svg><input class="input" type="search" placeholder="Інвертор Deye 6 кВт, АКБ 5 кВт·год…"></label>
+          <div class="qty" role="group" aria-label="Кількість"><button type="button" data-step="-1" aria-label="Менше">−</button><output>1</output><button type="button" data-step="1" aria-label="Більше">+</button></div>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Плитки вибору · квіз і форма заявки</h3>
+        <div class="sg-demo grid grid--4">
+          <label class="option-tile"><input type="radio" name="sg-o" checked>Квартира<small>Резерв без панелей</small></label>
+          <label class="option-tile"><input type="radio" name="sg-o">Будинок<small>Гібридна станція</small></label>
+          <label class="option-tile"><input type="radio" name="sg-o">Бізнес<small>Безперебійність</small></label>
+          <label class="option-tile"><input type="radio" name="sg-o">ОСББ<small>Ліфти, насоси</small></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЧІПИ -->
+    <section class="sg-section" id="chips">
+      <header><span class="label-chip">08</span><h2 class="t-h2">Чіпи, бейджі, вкладки</h2></header>
+      <div class="sg-demo stack" style="--stack-gap:var(--space-8)">
+        <div class="cluster"><span class="label-chip">Готові рішення</span><span class="sg-code">.label-chip — мітка над заголовком секції</span></div>
+        <div class="cluster">
+          <button class="chip" aria-pressed="true">Гібридні</button><button class="chip" aria-pressed="false">Мережеві</button><button class="chip" aria-pressed="false">Автономні</button><button class="chip" aria-pressed="false">3 фази</button><button class="chip" aria-pressed="false">48 В</button>
+        </div>
+        <div class="cluster">
+          <span class="badge badge--accent"><span class="badge__dot"></span>В наявності</span>
+          <span class="badge badge--solid">Кредит 0%</span>
+          <span class="badge badge--warning">Під замовлення</span>
+          <span class="badge badge--danger">−12%</span>
+          <span class="badge badge--info">Офіційна гарантія</span>
+          <span class="badge">Новинка</span>
+        </div>
+        <div role="tablist" aria-label="Тип об'єкта" class="tabs">
+          <button role="tab" class="tabs__tab" aria-selected="true">Усі</button>
+          <button role="tab" class="tabs__tab" aria-selected="false" tabindex="-1">Квартира</button>
+          <button role="tab" class="tabs__tab" aria-selected="false" tabindex="-1">Будинок</button>
+          <button role="tab" class="tabs__tab" aria-selected="false" tabindex="-1">Бізнес</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАРТКИ -->
+    <section class="sg-section" id="cards">
+      <header><span class="label-chip">09</span><h2 class="t-h2">Картки</h2></header>
+      <div class="sg-block"><h3>Медіакартки · сценарії</h3>
+        <div class="grid grid--2">
+          <a href="#" class="media-card media-card--lg" style="grid-row:span 2" data-reveal><div class="ph media-card__bg">Фото · будинок із панелями</div><div><div class="media-card__title">Для будинку</div><div class="media-card__meta">Гібридна станція з АКБ</div><div class="media-card__price"><small>від</small> 119 000 грн</div></div><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+          <a href="#" class="media-card" data-reveal><div class="ph media-card__bg">Фото · квартира</div><div><div class="media-card__title">Для квартири</div><div class="media-card__meta">Резерв без панелей</div></div><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+          <a href="#" class="media-card" data-reveal><div class="ph media-card__bg">Фото · бізнес</div><div><div class="media-card__title">Для бізнесу</div><div class="media-card__meta">Безперебійність і окупність</div></div><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Картка товару · картка готового рішення</h3>
+        <div class="grid grid--3">
+          <article class="card card--interactive product-card" data-reveal>
+            <div class="product-card__media"><div class="product-card__badges"><span class="badge badge--accent"><span class="badge__dot"></span>В наявності</span></div><button class="product-card__fav" aria-label="В обране"><svg class="icon"><use href="#i-heart"/></svg></button><div class="ph">Рендер · інвертор</div></div>
+            <div class="product-card__body">
+              <span class="product-card__brand">Deye</span>
+              <h4 class="product-card__title"><a href="#">Гібридний інвертор Deye SUN-6K 6 кВт, 1 фаза</a></h4>
+              <div class="rating"><span class="rating__stars">★★★★★</span>24 відгуки</div>
+              <div class="product-card__footer"><div class="price"><span class="price__now">119 000 <small>грн</small></span><span class="price__monthly">від 4 958 грн/міс</span></div><button class="btn btn--primary btn--icon" aria-label="У кошик"><svg class="icon"><use href="#i-cart"/></svg></button></div>
+            </div>
+          </article>
+          <article class="card card--interactive product-card" data-reveal>
+            <div class="product-card__media"><div class="product-card__badges"><span class="badge badge--danger">−12%</span><span class="badge badge--info">Офіційна гарантія</span></div><button class="product-card__fav" aria-label="В обране"><svg class="icon"><use href="#i-heart"/></svg></button><div class="ph">Рендер · АКБ</div></div>
+            <div class="product-card__body">
+              <span class="product-card__brand">Deye</span>
+              <h4 class="product-card__title"><a href="#">Акумулятор LiFePO4 Deye SUN-6K 5,12 кВт·год</a></h4>
+              <dl class="specs" style="margin:0"><div class="specs__row"><dt>Напруга</dt><dd>51,2 В</dd></div><div class="specs__row"><dt>Цикли</dt><dd>6000</dd></div></dl>
+              <div class="product-card__footer"><div class="price"><span class="price__old">135 000 грн</span><span class="price__now">119 000 <small>грн</small></span></div><button class="btn btn--primary btn--icon" aria-label="У кошик"><svg class="icon"><use href="#i-cart"/></svg></button></div>
+            </div>
+          </article>
+          <article class="card card--accent kit-card" data-reveal>
+            <div class="ph">Рендер · комплект</div>
+            <div class="stack" style="--stack-gap:var(--space-2)"><span class="t-label c-accent">Готове рішення · з монтажем</span><h4 class="t-h4">Резерв для квартири 5,12 кВт·год</h4></div>
+            <div class="kit-card__runs"><span class="badge">Світло</span><span class="badge">Роутер</span><span class="badge">Котел</span><span class="badge badge--accent">10 год автономності</span></div>
+            <div class="kit-card__footer"><div class="price"><span class="price__now">119 000 <small>грн</small></span><span class="price__monthly">від 4 958 грн/міс</span></div><a href="#" class="arrow-btn" aria-label="Детальніше"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          </article>
+        </div>
+      </div>
+      <div class="sg-block"><h3>Цифри з тонкими роздільниками · слайд кейсу</h3>
+        <div class="divided" style="--cols:4">
+          <div class="stat"><span class="stat__value">5 <em>р.</em></span><span class="stat__label">гарантії на монтаж у договорі</span></div>
+          <div class="stat"><span class="stat__value">24 <em>год</em></span><span class="stat__label">виїзд сервісу</span></div>
+          <div class="stat"><span class="stat__value">12</span><span class="stat__label">офіційних партнерств</span></div>
+          <div class="stat"><span class="stat__value">640+</span><span class="stat__label">змонтованих об'єктів</span></div>
+        </div>
+        <article class="case-slide" data-reveal>
+          <div class="ph">Фото об'єкта на весь слайд</div>
+          <div class="cluster" style="justify-content:space-between"><span class="case-slide__counter">(01<span class="t-dim">/05)</span></span><div class="cluster"><button class="arrow-btn" aria-label="Попередній"><svg class="icon"><use href="#i-arrow-l"/></svg></button><button class="arrow-btn arrow-btn--filled" aria-label="Наступний"><svg class="icon"><use href="#i-arrow"/></svg></button></div></div>
+          <div class="cluster" style="justify-content:space-between;align-items:flex-end;--cluster-gap:var(--space-8)">
+            <div class="stack" style="--stack-gap:var(--space-2);max-width:34rem"><span class="t-body-sm c-secondary">Приватний будинок · Львів</span><h4 class="t-h3">Гібридна станція 6 кВт + АКБ 5,12 кВт·год</h4></div>
+            <div class="case-slide__metrics"><div class="stat"><span class="t-num" style="font-size:1.5rem">3 дні</span><span class="stat__label">монтаж</span></div><div class="stat"><span class="t-num" style="font-size:1.5rem">119 000</span><span class="stat__label">під ключ</span></div><div class="stat"><span class="t-num" style="font-size:1.5rem">10 год</span><span class="stat__label">автономності</span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- НАВІГАЦІЯ -->
+    <section class="sg-section" id="nav">
+      <header><span class="label-chip">10</span><h2 class="t-h2">Навігація</h2></header>
+      <div class="site-header">
+        <a href="#" class="site-header__logo"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark"/></svg>Lucky Energy</a>
+        <nav class="site-header__nav" aria-label="Головна"><a href="#" aria-current="page">Каталог</a><a href="#">Рішення</a><a href="#">Послуги</a><a href="#">Кейси</a><a href="#">Фінансування</a></nav>
+        <div class="site-header__actions">
+          <button class="btn btn--ghost btn--icon site-header__hide-sm" aria-label="Пошук"><svg class="icon"><use href="#i-search"/></svg></button>
+          <button class="btn btn--ghost btn--icon site-header__hide-sm" aria-label="Кабінет"><svg class="icon"><use href="#i-user"/></svg></button>
+          <button class="btn btn--ghost btn--icon" aria-label="Кошик, 2 товари" style="position:relative"><svg class="icon"><use href="#i-cart"/></svg><span class="cart-count">2</span></button>
+          <a href="#" class="btn btn--primary btn--sm site-header__cta">Підібрати рішення</a>
+          <button class="btn btn--secondary btn--icon site-header__burger" aria-label="Меню" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+        </div>
+      </div>
+      <div class="cluster" style="justify-content:space-between">
+        <ol class="breadcrumbs"><li><a href="#">Головна</a></li><li><a href="#">Каталог</a></li><li><a href="#">Інвертори</a></li><li aria-current="page">Гібридні</li></ol>
+        <nav class="pagination" aria-label="Сторінки"><a href="#" aria-label="Попередня">‹</a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">12</a><a href="#" aria-label="Наступна">›</a></nav>
+      </div>
+    </section>
+
+    <!-- АКОРДЕОН -->
+    <section class="sg-section" id="disclosure">
+      <header><span class="label-chip">11</span><h2 class="t-h2">Акордеон і кроки</h2></header>
+      <div class="grid grid--2" style="align-items:start;gap:var(--space-12)">
+        <div class="accordion">
+          <div class="accordion__item"><button class="accordion__trigger" aria-expanded="true"><span class="accordion__num">01</span><span class="accordion__title">Заявка або квіз</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p>Розповідаєте про об'єкт і потреби. Відповідаємо протягом 2 годин у зручному каналі.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" aria-expanded="false"><span class="accordion__num">02</span><span class="accordion__title">Виїзд інженера</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p>Замір, перевірка щитка, даху та місця під обладнання.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" aria-expanded="false"><span class="accordion__num">03</span><span class="accordion__title">Проєкт і кошторис</span><span class="accordion__icon"></span></button><div class="accordion__panel"><div><p>Фіксуємо склад системи й ціну в договорі.</p></div></div></div>
+        </div>
+        <div class="stack" style="--stack-gap:var(--space-8)">
+          <div class="stack"><div class="cluster c-secondary t-body-sm" style="justify-content:space-between"><span>Крок 2 з 5</span><span>Що має працювати?</span></div><div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Прогрес квізу"><div class="progress__bar" style="width:40%"></div></div></div>
+          <ol class="steps"><li class="is-done">Заявка</li><li class="is-done">Замір</li><li aria-current="step">Проєкт</li><li>Поставка</li><li>Монтаж</li><li>Сервіс</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЕНЕРГІЯ -->
+    <section class="sg-section" id="energy">
+      <header><span class="label-chip">12</span><h2 class="t-h2">Схема енергії</h2><p class="sg-note">Сигнатурний блок темної версії. Кожне джерело має свій колір, активний потік — анімований пунктир, неактивний — сіра лінія.</p></header>
+      <div class="sg-demo stack" style="--stack-gap:var(--space-8)">
+        <div class="cluster" style="--cluster-gap:var(--space-4)">
+          <a href="#" class="energy-node energy-node--solar"><span class="energy-node__icon"><svg class="icon"><use href="#i-sun"/></svg></span><span><span class="energy-node__name">Сонячні панелі</span><span class="energy-node__value">6 кВт</span></span></a>
+          <a href="#" class="energy-node energy-node--battery"><span class="energy-node__icon"><svg class="icon"><use href="#i-battery"/></svg></span><span><span class="energy-node__name">Акумулятор</span><span class="energy-node__value">82% · 9 год</span></span></a>
+          <a href="#" class="energy-node energy-node--grid"><span class="energy-node__icon"><svg class="icon"><use href="#i-grid"/></svg></span><span><span class="energy-node__name">Мережа</span><span class="energy-node__value">6 кВт</span></span></a>
+          <a href="#" class="energy-node"><span class="energy-node__icon"><svg class="icon"><use href="#i-home"/></svg></span><span><span class="energy-node__name">Дім</span><span class="energy-node__value">6 кВт</span></span></a>
+          <a href="#" class="energy-node energy-node--ev"><span class="energy-node__icon"><svg class="icon"><use href="#i-car"/></svg></span><span><span class="energy-node__name">Зарядка авто</span><span class="energy-node__value">6 кВт</span></span></a>
+        </div>
+        <svg viewBox="0 0 900 60" style="width:100%;height:60px" aria-hidden="true">
+          <path class="flow-line" style="--flow-color:var(--color-energy-solar)" d="M10 15 H890"/>
+          <path class="flow-line" d="M10 32 H890"/>
+          <path class="flow-line flow-line--idle" d="M10 49 H890"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ПОВІДОМЛЕННЯ -->
+    <section class="sg-section" id="feedback">
+      <header><span class="label-chip">13</span><h2 class="t-h2">Повідомлення</h2></header>
+      <div class="grid grid--3">
+        <div class="alert alert--success" role="status"><svg class="icon"><use href="#i-check"/></svg><div><strong>Заявку отримали</strong>Інженер зв'яжеться з вами протягом 2 годин.</div></div>
+        <div class="alert alert--warning"><svg class="icon"><use href="#i-alert"/></svg><div><strong>Під замовлення</strong>Строк поставки — 3 дні. Ціну зафіксуємо в договорі.</div></div>
+        <div class="alert alert--danger" role="alert"><svg class="icon"><use href="#i-alert"/></svg><div><strong>Оплата не пройшла</strong>Спробуйте ще раз або оберіть інший спосіб.</div></div>
+      </div>
+      <div class="cluster" style="--cluster-gap:var(--space-8)">
+        <div class="toast" role="status"><svg class="icon"><use href="#i-check"/></svg>Додано в кошик<a href="#" class="c-accent" style="font-weight:600">Відкрити</a></div>
+        <div class="stack" style="flex:1 1 16rem;--stack-gap:var(--space-3)"><div class="skeleton" style="height:1.25rem;width:70%"></div><div class="skeleton" style="height:1.25rem"></div><div class="skeleton" style="height:1.25rem;width:45%"></div></div>
+      </div>
+    </section>
+
+    <!-- ПАТЕРНИ -->
+    <section class="sg-section" id="patterns">
+      <header><span class="label-chip">14</span><h2 class="t-h2">Патерни</h2></header>
+      <div class="sg-block"><h3>Заголовок секції: мітка + заголовок ліворуч, пояснення праворуч</h3>
+        <div class="sg-demo"><div class="section-head" style="margin:0"><div class="section-head__main"><span class="label-chip">Рішення</span><h2 class="t-h2">Рішення під ваш об'єкт <span class="t-dim">із монтажем і сервісом</span></h2></div><p class="section-head__aside">Три сценарії — три шляхи. Усередині: готові пакети, що працюватиме і скільки годин.</p></div></div>
+      </div>
+      <div class="sg-block"><h3>Світлий контрастний блок · квіз</h3>
+        <div class="inverse-block grid grid--2" style="align-items:center;gap:var(--space-12)">
+          <div class="stack" style="--stack-gap:var(--space-5)"><span class="label-chip">Підбір за 5 кроків</span><h2 class="t-h2">Не знаєте, що обрати?</h2><p class="c-secondary">5 простих запитань — і готовий комплект із ціною на екрані. Без обов'язкового дзвінка.</p><a href="#" class="btn btn--dark btn--lg" style="align-self:flex-start">Почати підбір</a></div>
+          <div class="stack" style="--stack-gap:var(--space-5)"><div class="progress"><div class="progress__bar" style="width:20%"></div></div><div class="grid grid--3"><label class="option-tile"><input type="radio" name="sg-q" checked><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-building"/></svg>Квартира</label><label class="option-tile"><input type="radio" name="sg-q"><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-home"/></svg>Будинок</label><label class="option-tile"><input type="radio" name="sg-q"><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-store"/></svg>Бізнес</label></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script type="module" src="js/ui.js"></script>
+</body>
+</html>
