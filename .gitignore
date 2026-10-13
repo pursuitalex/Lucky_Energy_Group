@@ -1,11 +1,10 @@
-# У репозиторії лише сайт і його збірка
+# У репозиторії лише готовий сайт і налаштування публікації
 /*
 !/.gitignore
 !/.gitattributes
 !/README.md
 !/vercel.json
-!/web/
-!/tools/
+!/site/
 
 .DS_Store
 Thumbs.db

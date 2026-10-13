@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="uk" data-theme="light" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Прев'ю для замовника: сайт не індексується (див. також vercel.json і robots.txt) -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Lucky Energy — сонячні станції, інвертори та акумулятори під ключ</title>
+<meta name="description" content="Продаж, монтаж і сервіс систем енергонезалежності для квартир, будинків і бізнесу по всій Україні: гібридні інвертори, акумулятори LiFePO4, сонячні панелі, готові комплекти.">
+<meta name="theme-color" content="#F5F8F6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Martian+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero2-p-1920.jpg" imagesrcset="img/hero2-p-1920.jpg 1920w, img/hero2-p.jpg 3840w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/home-light.css">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('h2-anim');setTimeout(function(){var h=document.querySelector('.hero2');if(h)h.classList.add('is-ready')},3500)}</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 100 100"><mask id="logo-mark-cut"><rect width="100" height="100" fill="#fff"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.7) translate(-50 -50)" fill="#000" stroke="#000" stroke-width="4" stroke-linejoin="round"/></mask><circle cx="50" cy="50" r="48" fill="currentColor" mask="url(#logo-mark-cut)"/></symbol>
+  <symbol id="logo-mark-outline" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="8"/><path d="M58 5 L23 56 H46 L40 95 L78 42 H54 Z" transform="translate(50 50) scale(0.68) translate(-50 -50)" fill="currentColor" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+  <symbol id="i-compare" viewBox="0 0 24 24"><path d="M12 4v16M5 8h14M5 8l-2 6h4l-2-6zM19 8l-2 6h4l-2-6z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 13.5h6L10 22l9-12.5h-6.5L13 2z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2.5"/><path d="M22 10.5v3M7 10.5v3M10.5 10.5v3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M12 2l4 8H8l4-8zM8 10l-3 12M16 10l3 12M6.5 16h11M4 6h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5M10 20v-6h4v6"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M3 21h18M9 7.5h3M9 11.5h3M9 15.5h3"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.5h14.8L21 9.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM9.5 20v-5.5h5V20"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-3.5l2-5h12l2 5V16M4 16h16M4 16v2.5M20 16v2.5M7.5 13h.01M16.5 13h.01"/></symbol>
+  <symbol id="i-inverter" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"/><rect x="8.5" y="6.5" width="7" height="5" rx="1"/><path d="M9 16h.01M12 16h.01M15 16h.01"/></symbol>
+  <symbol id="i-catalog" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.2A2.5 2.5 0 0 1 4 13.5v-8z"/></symbol>
+</svg>
+
+<a href="#main" class="visually-hidden">Перейти до змісту</a>
+
+<!-- Шапка концепту A: два ряди — службовий (лого, пошук, телефон) і навігаційний -->
+<header class="lheader" id="topbar">
+  <div class="container lheader__top">
+    <a href="index.html" class="site-header__logo lheader__logo" aria-label="Lucky Energy — на головну"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark"/></svg>Lucky Energy</a>
+    <form class="lheader__search" role="search" action="catalog.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input type="search" name="q" placeholder="Інвертор 6 кВт, акумулятор 5 кВт·год…" aria-label="Пошук у каталозі">
+    </form>
+    <div class="lheader__contact">
+      <a href="tel:0800750120" class="lheader__phone">0 800 750 120</a>
+      <a href="#lead" class="lheader__callback">Передзвоніть мені</a>
+    </div>
+    <div class="lheader__icons">
+      <button class="btn btn--ghost btn--icon lheader__hide-sm" aria-label="Кабінет"><svg class="icon"><use href="#i-user"/></svg></button>
+      <a href="cart.html" class="btn btn--ghost btn--icon" aria-label="Кошик" style="position:relative"><svg class="icon"><use href="#i-cart"/></svg><span class="cart-count" id="cart-count" hidden>0</span></a>
+      <button class="btn btn--secondary btn--icon lheader__burger" aria-label="Меню" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="lheader__bar">
+    <div class="container lheader__bar-inner">
+      <nav class="lheader__nav" aria-label="Головна навігація">
+        <a href="catalog.html" class="lheader__catalog"><svg class="icon"><use href="#i-catalog"/></svg>Каталог</a>
+        <a href="#scenarios">Рішення</a><a href="#process">Послуги</a><a href="#cases">Кейси</a><a href="#finance">Фінансування</a><a href="#trust">Про нас</a><a href="blog.html">Блог</a><a href="#lead">Контакти</a>
+      </nav>
+      <div class="lheader__lang"><button type="button" class="lang-switch" data-lang-switch aria-haspopup="dialog" aria-expanded="false" aria-label="Мова сайту: українська. Змінити мову">UA</button></div>
+      <a href="quiz.html" class="btn btn--primary btn--sm">Підібрати рішення</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO: фотокартка із заокругленими кутами. Рейтинг, заголовок і кнопки — внизу ліворуч,
+       переваги скляними плашками — внизу праворуч, у куті виріз зі стрілкою «далі». Цифри — рядом під карткою.
+       Поява зрежисована: css/home-light.css («Поява першого екрана»), старт — js/home-light.js. -->
+  <section class="hero2" aria-labelledby="hero-title">
+    <div class="hero2__card" data-theme="dark" data-tone="summer">
+      <img class="hero2__bg" id="hero2-bg" src="img/hero2-p-1920.jpg" srcset="img/hero2-p-1920.jpg 1920w, img/hero2-p.jpg 3840w" sizes="100vw" style="--h2-pos:8% 50%;--h2-pos-m:63% 50%" alt="Родина йде до електромобіля на зарядці біля будинку із сонячними панелями на даху" width="3840" height="1629" fetchpriority="high">
+      <div class="hero2__content">
+        <div class="hero2__text">
+          <p class="hero2__rating"><strong>4,9</strong><span class="rating__stars" aria-hidden="true">★★★★★</span><span>186 відгуків у Google</span></p>
+          <h1 class="hero2__title" id="hero-title"><span class="hero2__line"><span>Сонячні станції для</span></span> <span class="hero2__line"><span>дому та бізнесу</span></span></h1>
+          <p class="hero2__lead">Підбираємо, постачаємо офіційне обладнання, монтуємо власними бригадами й обслуговуємо після запуску.</p>
+          <div class="cluster hero2__actions">
+            <a href="quiz.html" class="btn btn--primary btn--lg hero2__cta">Підібрати рішення <span class="hero2__cta-ico"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+            <a href="catalog.html" class="btn btn--secondary btn--lg">Каталог <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <ul class="hero2__chips" aria-label="Переваги">
+          <li>Гарантія на монтаж 5 років</li>
+          <li>Власні монтажні бригади</li>
+          <li>Безкоштовний розрахунок</li>
+        </ul>
+      </div>
+      <a href="#scenarios" class="hero2__next" aria-label="Далі: рішення під ваш об'єкт"><span class="hero2__next-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+      <!-- Тимчасовий перемикач фону: прибрати після вибору фото -->
+      <div class="variant-switch hero2__switch" role="group" aria-label="Варіанти фото першого екрана (лише для вибору)">
+        <button type="button" class="variant-switch__btn" data-hero2-photo="p" data-src="img/hero2-p-1920.jpg" data-srcset="img/hero2-p-1920.jpg 1920w, img/hero2-p.jpg 3840w" data-pos="8% 50%" data-pos-m="63% 50%" data-tone="summer" aria-pressed="true" aria-label="Фото 1: Авто спереду, родина йде до авто">1</button>
+        <button type="button" class="variant-switch__btn" data-hero2-photo="q" data-src="img/hero2-q-1920.jpg" data-srcset="img/hero2-q-1920.jpg 1920w, img/hero2-q.jpg 3840w" data-pos="50% 50%" data-pos-m="63% 50%" data-tone="summer" aria-pressed="false" aria-label="Фото 2: Авто спереду, синіше небо">2</button>
+        <button type="button" class="variant-switch__btn" data-hero2-photo="s" data-src="img/hero2-s-1920.jpg" data-srcset="img/hero2-s-1920.jpg 1920w, img/hero2-s.jpg 3840w" data-pos="50% 50%" data-pos-m="60% 50%" data-tone="summer" aria-pressed="false" aria-label="Фото 3: Авто збоку, пара біля авто">3</button>
+      </div>
+    </div>
+    <div class="container">
+      <dl class="hero2__stats" data-reveal>
+        <div class="stat"><dt class="stat__label">років на ринку енергообладнання</dt><dd class="stat__value">7</dd></div>
+        <div class="stat"><dt class="stat__label">змонтованих об'єктів по Україні</dt><dd class="stat__value">640<em>+</em></dd></div>
+        <div class="stat"><dt class="stat__label">гарантії на монтаж у договорі</dt><dd class="stat__value">5 <em>р.</em></dd></div>
+        <div class="stat"><dt class="stat__label">виїзд сервісу, підмінне обладнання</dt><dd class="stat__value">24 <em>год</em></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- СЦЕНАРІЇ: фото зверху, текст у білій картці -->
+  <section class="section" id="scenarios">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Рішення</span><h2 class="t-h2">Оберіть свій <span class="t-dim">сценарій</span></h2></div>
+        <p class="section-head__aside" data-reveal>Три сценарії — три шляхи. Усередині: готові пакети, що працюватиме під час відключень і скільки годин.</p>
+      </div>
+      <div class="grid grid--3">
+        <a href="solution.html?type=apartment" class="scen" data-reveal>
+          <span class="scen__media"><img src="img/scen-apartment.jpg" alt="Світла квартира з інвертором і акумулятором у ніші коридору" width="1600" height="679" loading="lazy"></span>
+          <span class="scen__body"><strong class="t-h3">Для квартири</strong><span class="c-secondary">Резерв без панелей: світло, роутер, котел і холодильник під час відключень.</span>
+          <span class="scen__foot"><span class="scen__price"><small>від</small> 64 900 грн</span><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></span>
+        </a>
+        <a href="solution.html?type=house" class="scen" data-reveal>
+          <span class="scen__media"><img src="img/scen-house.jpg" alt="Гібридний інвертор і акумулятор у світлому гаражі приватного будинку" width="1600" height="679" loading="lazy"></span>
+          <span class="scen__body"><strong class="t-h3">Для будинку</strong><span class="c-secondary">Гібридна сонячна станція з акумуляторами: автономність і менші рахунки.</span>
+          <span class="scen__foot"><span class="scen__price"><small>від</small> 215 000 грн</span><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></span>
+        </a>
+        <a href="solution.html?type=business" class="scen" data-reveal>
+          <span class="scen__media"><img src="img/scen-business.jpg" alt="Магазин одягу з великими вітринами вдень" width="1600" height="679" loading="lazy"></span>
+          <span class="scen__body"><strong class="t-h3">Для бізнесу</strong><span class="c-secondary">Безперебійна робота магазину, офісу чи виробництва. Розрахунок окупності.</span>
+          <span class="scen__foot"><span class="scen__price scen__price--neutral"><small>розрахунок за</small> 24 години</span><span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОЗИЦІОНУВАННЯ + БРЕНДИ -->
+  <section class="section lstatement" id="brands">
+    <div class="container">
+      <p class="lstatement__text" data-reveal>Одна компанія відповідає за все: <span class="t-dim">підбір, офіційне обладнання, монтаж і сервіс — один договір і одна гарантія.</span></p>
+      <ul class="lbrands" aria-label="Бренди, представлені в магазині" data-reveal>
+        <li><img src="img/brands/deye.svg" alt="Deye" width="84" height="33" decoding="async"></li>
+        <li><img src="img/brands/huawei.svg" alt="Huawei" width="43" height="44" decoding="async"></li>
+        <li><img src="img/brands/sungrow.png" alt="Sungrow" width="146" height="19" decoding="async"></li>
+        <li><img src="img/brands/solaredge.svg" alt="SolarEdge" width="113" height="24" decoding="async"></li>
+        <li><img src="img/brands/goodwe.svg" alt="GoodWe" width="108" height="25" decoding="async"></li>
+        <li><img src="img/brands/chisage.png" alt="Chisage ESS" width="94" height="29" decoding="async"></li>
+        <li><img src="img/brands/leapton-solar.png" alt="Leapton Solar" width="126" height="44" decoding="async"></li>
+        <li><img src="img/brands/wolong.png" alt="Wolong" width="130" height="21" decoding="async"></li>
+        <li><img src="img/brands/heckman.svg" alt="Heckman" width="170" height="17" decoding="async"></li>
+        <li><img src="img/brands/v-tac.svg" alt="V-TAC" width="119" height="23" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ГОТОВІ РІШЕННЯ -->
+  <section class="section section--alt" id="kits">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Готові рішення</span><h2 class="t-h2">Комплекти <span class="t-dim">з монтажем у ціні</span></h2></div>
+        <div class="tabs" role="tablist" aria-label="Тип об'єкта" id="kit-tabs" data-reveal>
+          <button class="tabs__tab" role="tab" aria-selected="true" data-seg="all">Усі</button><button class="tabs__tab" role="tab" aria-selected="false" data-seg="apartment">Квартира</button><button class="tabs__tab" role="tab" aria-selected="false" data-seg="house">Будинок</button><button class="tabs__tab" role="tab" aria-selected="false" data-seg="business">Бізнес</button>
+        </div>
+      </div>
+      <div class="lkits" id="kit-list">
+        <article class="card lkit" data-seg="apartment" data-reveal>
+          <a href="product.html?id=LE-40001" class="lkit__media"><img src="img/kit-apartment.jpg" alt="Комплект резервного живлення для квартири: інвертор і акумулятор" width="1367" height="1100" loading="lazy"><span class="badge badge--accent">Для квартири</span></a>
+          <h3 class="t-h4">Резерв для квартири 5 кВт·год</h3>
+          <ul class="lkit__specs"><li>Інвертор Deye · 5 кВт</li><li>АКБ LiFePO4 · 5,12 кВт·год</li><li>Автономність · до 10 год</li></ul>
+          <div class="lkit__foot"><div class="price"><span class="price__now">119 000 <small>грн</small></span><span class="price__monthly">з монтажем · від 4 958 грн/міс</span></div><a href="product.html?id=LE-40001" class="arrow-btn" aria-label="Детальніше про комплект для квартири"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        </article>
+        <article class="card lkit" data-seg="house" data-reveal>
+          <a href="product.html?id=LE-40002" class="lkit__media"><img src="img/kit-house.jpg" alt="Гібридна станція для будинку: інвертор, акумулятори, панелі" width="1192" height="1100" loading="lazy"><span class="badge badge--solid">Кредит 0%</span></a>
+          <h3 class="t-h4">Гібридна станція для будинку 10 кВт</h3>
+          <ul class="lkit__specs"><li>Гібридний інвертор · 10 кВт</li><li>АКБ LiFePO4 · 10,24 кВт·год</li><li>Панелі 580 Вт · 18 шт</li></ul>
+          <div class="lkit__foot"><div class="price"><span class="price__now">438 000 <small>грн</small></span><span class="price__monthly">з монтажем · кредит 0%</span></div><a href="product.html?id=LE-40002" class="arrow-btn" aria-label="Детальніше про станцію для будинку"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        </article>
+        <article class="card lkit" data-seg="business" data-reveal>
+          <a href="product.html?id=LE-40003" class="lkit__media"><img src="img/kit-business.jpg" alt="Система накопичення енергії для бізнесу" width="1367" height="1100" loading="lazy"><span class="badge badge--info">Для бізнесу</span></a>
+          <h3 class="t-h4">Резерв для магазину чи офісу 30 кВт</h3>
+          <ul class="lkit__specs"><li>Інвертор · 3 фази · 30 кВт</li><li>Система накопичення · 61 кВт·год</li><li>Каси, холод, сервери · 8 год</li></ul>
+          <div class="lkit__foot"><div class="price"><span class="price__now">1 360 000 <small>грн</small></span><span class="price__monthly">ціна з ПДВ / без ПДВ</span></div><a href="product.html?id=LE-40003" class="arrow-btn" aria-label="Детальніше про рішення для бізнесу"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        </article>
+        <a href="#lead" class="lkit lkit--cta" data-seg="all" data-reveal>
+          <svg class="svc-icon svc-icon--mono" aria-hidden="true"><use href="img/icons-services.svg#svc-house-energy"/></svg>
+          <strong class="t-h3">Не знайшли свій варіант?</strong>
+          <span>Зберемо комплект під ваш об'єкт і бюджет. Розрахунок безкоштовний, відповідь — протягом 2 годин.</span>
+          <span class="lkit__cta-row">Отримати розрахунок <span class="arrow-btn"><svg class="icon"><use href="#i-arrow"/></svg></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАТЕГОРІЇ: бенто -->
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Каталог</span><h2 class="t-h2">Каталог <span class="t-dim">обладнання</span></h2></div>
+        <a href="catalog.html" class="link-arrow" data-reveal>Увесь каталог <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="lcats">
+        <a href="catalog.html?cat=inverters" class="lcat lcat--xl" style="--tile-bg:#D0D8CF" data-reveal><img src="img/cat-inverter.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Інвертори</strong><span>Гібридні · мережеві · автономні</span></span><span class="lcat__count">86 товарів <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html?cat=batteries" class="lcat" style="--tile-bg:#D6DDD8" data-reveal><img src="img/cat-battery.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Акумулятори</strong></span><span class="lcat__count">54 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html?cat=panels" class="lcat" style="--tile-bg:#E3EAE7" data-reveal><img src="img/cat-panel.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Сонячні панелі</strong></span><span class="lcat__count">38 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html?cat=kits" class="lcat" style="--tile-bg:#D6DFDA" data-reveal><img src="img/kit-house.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Готові комплекти</strong></span><span class="lcat__count">47 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html?cat=stations" class="lcat" style="--tile-bg:#E0EBE6" data-reveal><img src="img/prod-station.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Зарядні станції</strong></span><span class="lcat__count">22 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html?cat=generators" class="lcat" style="--tile-bg:#DBE4DF" data-reveal><img src="img/prod-generator.jpg" alt="" width="1192" height="1100" loading="lazy"><span class="lcat__text"><strong>Генератори</strong></span><span class="lcat__count">31 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+        <a href="catalog.html" class="lcat lcat--wide" style="--tile-bg:#E2EBE7" data-reveal><img src="img/cat-components.jpg" alt="" width="2000" height="848" loading="lazy"><span class="lcat__text"><strong>Комплектуючі</strong><span>Кріплення · кабель · захист · EV-зарядки</span></span><span class="lcat__count">140 <svg class="icon"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС: темний блок -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Як працюємо</span><h2 class="t-h2">Від заявки до запуску <span class="t-dim">за 2–3 тижні</span></h2></div>
+        <p class="section-head__aside" data-reveal>Шість кроків, одна відповідальна команда. Строк кожного етапу відомий наперед.</p>
+      </div>
+      <div class="lprocess">
+        <figure class="lprocess__media" data-reveal><img src="img/process-day.jpg" alt="Монтажник кріпить сонячну панель на даху будинку сонячного дня" width="1600" height="1986" loading="lazy"></figure>
+        <ol class="lprocess__steps">
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Заявка або квіз</strong><span class="lprocess__time">2 год</span></span><p>Розповідаєте про об'єкт і що має працювати під час відключень — у формі, месенджері або квізі. Відповідаємо протягом 2 годин.</p></div></li>
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Виїзд інженера</strong><span class="lprocess__time">1–2 дні</span></span><p>Замір, перевірка щитка, даху та місця під обладнання. Фото й нотатки потрапляють у ваш проєкт.</p></div></li>
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Проєкт і кошторис</strong><span class="lprocess__time">2–3 дні</span></span><p>Пояснюємо, чому саме така конфігурація і що можна спростити. Склад системи й ціну фіксуємо в договорі.</p></div></li>
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Поставка обладнання</strong><span class="lprocess__time">3–7 днів</span></span><p>Офіційне обладнання з гарантією виробника в Україні — зі складу або під замовлення.</p></div></li>
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Монтаж і запуск</strong><span class="lprocess__time">2–4 дні</span></span><p>Монтуємо власною бригадою, підключаємо, налаштовуємо моніторинг і показуємо, як користуватися системою.</p></div></li>
+          <li data-reveal><span class="lprocess__num"></span><div><span class="lprocess__row"><strong>Сервіс і моніторинг</strong><span class="lprocess__time">постійно</span></span><p>Гарантія на роботи, планове ТО, виїзд протягом 24 годин і підмінне обладнання на час ремонту.</p></div></li>
+        </ol>
+      </div>
+      <div class="lprocess__cta" data-reveal>
+        <div><strong>Почніть із заявки — далі ведемо ми</strong><span>Безкоштовно і без зобов'язань: інженер порахує систему за переліком приладів або фото щитка.</span></div>
+        <a href="#lead" class="btn btn--primary btn--lg">Залишити заявку <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="section section--alt" id="trust">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Чому Lucky Energy</span><h2 class="t-h2">Чому нам <span class="t-dim">довіряють об'єкти</span></h2></div>
+        <div class="section-head__aside stack" style="--stack-gap:var(--space-4)" data-reveal><p>Не потрібно шукати, хто винен, якщо щось піде не так: за обладнання, монтаж і сервіс відповідаємо ми.</p><a href="page.html?id=about" class="link-arrow">Про компанію <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <div class="grid grid--4">
+        <div class="card ladv" data-reveal><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-inverter"/></svg><h3 class="t-h4">Офіційне обладнання</h3><p class="t-body-sm c-secondary">Сертифікати партнерства, гарантія виробника, перевірка серійного номера.</p></div>
+        <div class="card ladv" data-reveal><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-warranty"/></svg><h3 class="t-h4">Гарантія на монтаж 5 років</h3><p class="t-body-sm c-secondary">Власні сертифіковані бригади, гарантія на роботи прописана в договорі.</p></div>
+        <div class="card ladv" data-reveal><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-installments"/></svg><h3 class="t-h4">Прозора ціна</h3><p class="t-body-sm c-secondary">Склад комплекту, вартість робіт і платіж на місяць — до дзвінка менеджеру.</p></div>
+        <div class="card ladv" data-reveal><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-install"/></svg><h3 class="t-h4">Сервіс після запуску</h3><p class="t-body-sm c-secondary">Моніторинг, ТО, виїзд за 24 години, підмінне обладнання на час ремонту.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КВІЗ: акцентний блок кольору бренду -->
+  <section class="section" id="quiz">
+    <div class="container">
+      <div class="lquiz" data-reveal>
+        <div class="stack" style="--stack-gap:var(--space-5)">
+          <span class="label-chip">Підбір за 5 кроків</span>
+          <h2 class="t-h2">Не знаєте, що обрати? Підберемо за кілька хвилин</h2>
+          <p class="t-body-lg">5 простих запитань — і готовий комплект із ціною на екрані. Без обов'язкового дзвінка.</p>
+          <a href="quiz.html?object=apartment" class="btn btn--dark btn--lg" id="quiz-start" style="align-self:flex-start">Почати підбір <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="lquiz__card">
+          <div class="cluster c-secondary t-body-sm" style="justify-content:space-between"><span>Крок 1 з 5</span><span>Який у вас об'єкт?</span></div>
+          <div class="progress"><div class="progress__bar" style="width:20%"></div></div>
+          <div class="grid grid--3">
+            <label class="option-tile"><input type="radio" name="quiz-object" value="apartment" checked><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-building"/></svg>Квартира</label>
+            <label class="option-tile"><input type="radio" name="quiz-object" value="house"><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-home"/></svg>Будинок</label>
+            <label class="option-tile"><input type="radio" name="quiz-object" value="business"><svg class="icon option-tile__icon" aria-hidden="true"><use href="#i-store"/></svg>Бізнес</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЕЙСИ: нумеровані ряди -->
+  <section class="section" id="cases" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Кейси</span><h2 class="t-h2">Реалізовані <span class="t-dim">об'єкти</span></h2></div>
+        <a href="cases.html" class="link-arrow" data-reveal>Усі кейси <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="lcases">
+        <article class="lcase" data-reveal>
+          <div class="lcase__info">
+            <span class="lcase__num">01</span>
+            <span class="t-body-sm c-secondary">Приватний будинок · Львівська обл.</span>
+            <h3 class="t-h3">Гібридна станція 10 кВт + АКБ 10 кВт·год</h3>
+            <dl class="lcase__metrics"><div><dd>3 дні</dd><dt>монтаж</dt></div><div><dd>412 000 грн</dd><dt>під ключ</dt></div><div><dd>14 год</dd><dt>автономності</dt></div></dl>
+            <a href="case.html?id=lviv-house-10" class="link-arrow">Дивитися кейс <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <a href="case.html?id=lviv-house-10" class="lcase__media" aria-label="Кейс: гібридна станція 10 кВт для будинку"><img src="img/case-01.jpg" alt="Приватний будинок із сонячними панелями на даху, вид з дрона" width="2200" height="933" loading="lazy"></a>
+        </article>
+        <article class="lcase" data-reveal>
+          <div class="lcase__info">
+            <span class="lcase__num">02</span>
+            <span class="t-body-sm c-secondary">Бізнес · продуктовий магазин · Тернопіль</span>
+            <h3 class="t-h3">СЕС 30 кВт + система накопичення 61 кВт·год</h3>
+            <dl class="lcase__metrics"><div><dd>2 тижні</dd><dt>реалізація</dt></div><div><dd>38 000 грн/міс</dd><dt>економія</dt></div><div><dd>4,5 року</dd><dt>окупність</dt></div></dl>
+            <a href="case.html?id=kyiv-shop-30" class="link-arrow">Дивитися кейс <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <a href="case.html?id=kyiv-shop-30" class="lcase__media" aria-label="Кейс: СЕС 30 кВт для магазину"><img src="img/scen-business-market.jpg" alt="Освітлений торговий зал супермаркету" width="1600" height="679" loading="lazy"></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФІНАНСУВАННЯ -->
+  <section class="section section--alt finance" id="finance" data-variant="l" data-variant-fixed>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">Фінансування</span><h2 class="t-h2">Платіть так, <span class="t-dim">як зручно</span></h2></div>
+      </div>
+      <div class="finance__panel" data-reveal>
+        <div class="finance__grid">
+          <a href="article.html?id=credit-0-step-by-step" class="fin-card fin-card--featured">
+            <div class="fin-card__top"><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-credit-zero"/></svg><span class="badge badge--solid">Найвигідніше</span></div>
+            <div class="fin-card__figure">0<small>%</small></div>
+            <h3 class="t-h4">Державний кредит для приватних будинків</h3>
+            <p class="fin-card__text">До 480 000 грн на строк до 10 років, компенсація до 30% вартості. Допоможемо обрати банк і зібрати документи.</p>
+            <span class="link-arrow">Розрахувати кредит <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a href="#lead" class="fin-card">
+            <div class="fin-card__top"><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-installments"/></svg></div>
+            <div class="fin-card__figure">24<small>платежі</small></div>
+            <h3 class="t-h4">Оплата частинами без переплат</h3>
+            <p class="fin-card__text">ПриватБанк і monobank. Оформлення онлайн просто в кошику — для квартир і будинків.</p>
+            <span class="link-arrow">Умови <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a href="#lead" class="fin-card">
+            <div class="fin-card__top"><svg class="svc-icon" aria-hidden="true"><use href="img/icons-services.svg#svc-business-finance"/></svg></div>
+            <div class="fin-card__figure">5-7-9<small>%</small></div>
+            <h3 class="t-h4">Кредит і лізинг для бізнесу</h3>
+            <p class="fin-card__text">Кошторис, розрахунок окупності та пакет документів для банку. Ціни з ПДВ і без.</p>
+            <span class="link-arrow">Для бізнесу <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+        <form class="pay-calc" id="pay-calc" onsubmit="return false">
+          <div class="pay-calc__field">
+            <label for="pay-amount" class="pay-calc__label">Вартість системи <output id="pay-amount-out">250 000 грн</output></label>
+            <input type="range" id="pay-amount" class="range" min="50000" max="480000" step="10000" value="250000">
+          </div>
+          <div class="pay-calc__field pay-calc__field--term">
+            <span class="pay-calc__label" id="pay-term-label">Строк</span>
+            <div class="pay-calc__terms" role="radiogroup" aria-labelledby="pay-term-label">
+              <label class="pay-calc__term"><input type="radio" name="pay-term" value="12">12 міс</label>
+              <label class="pay-calc__term"><input type="radio" name="pay-term" value="24" checked>24 міс</label>
+              <label class="pay-calc__term"><input type="radio" name="pay-term" value="36">36 міс</label>
+            </div>
+          </div>
+          <div class="pay-calc__result" aria-live="polite">
+            <span class="pay-calc__label">Платіж на місяць</span>
+            <span class="pay-calc__sum" id="pay-sum">10 417 грн</span>
+            <span class="t-caption" id="pay-note">без переплати · орієнтовно</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВІДГУКИ: темний блок на всю ширину -->
+  <section class="section lreviews" id="reviews" data-theme="dark">
+    <div class="container lreviews__grid">
+      <div class="stack" style="--stack-gap:var(--space-6)" data-reveal>
+        <span class="label-chip">Відгуки</span>
+        <h2 class="t-h2">Що кажуть <span class="t-dim">клієнти</span></h2>
+        <div class="lreviews__stats">
+          <div class="stat"><span class="stat__value">4,9 <em>★</em></span><span class="stat__label">186 відгуків у Google Maps</span></div>
+          <div class="stat"><span class="stat__value">68<em>%</em></span><span class="stat__label">клієнтів приходять за рекомендацією</span></div>
+        </div>
+      </div>
+      <figure class="lreviews__quote" data-reveal>
+        <blockquote id="review-text">«Обирали між генератором і акумуляторами. Інженер порахував наше споживання, пояснив різницю й зібрав систему під котел, насос і холодильник. Третю зиму відключення дізнаємось лише з новин».</blockquote>
+        <figcaption>
+          <span class="trust__person"><span class="trust__avatar"></span><span><strong id="review-name">Наталія Ковальчук, Тернопіль</strong><br><span class="t-body-sm c-secondary" id="review-system">Гібридна станція 8 кВт + АКБ 10 кВт·год</span></span></span>
+          <span class="cluster"><button class="arrow-btn" id="review-prev" aria-label="Попередній відгук"><svg class="icon"><use href="#i-arrow-l"/></svg></button><button class="arrow-btn arrow-btn--filled" id="review-next" aria-label="Наступний відгук"><svg class="icon"><use href="#i-arrow"/></svg></button></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- БЛОГ: картки з обкладинками -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__main" data-reveal><span class="label-chip">База знань</span><h2 class="t-h2">Корисне <span class="t-dim">перед покупкою</span></h2></div>
+        <a href="blog.html" class="link-arrow" data-reveal>Усі статті <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="grid grid--3">
+        <a href="article.html?id=hybrid-inverter-for-house" class="lpost" data-reveal><span class="lpost__cover"><img src="img/cat-inverter.jpg" alt="" width="1192" height="1100" loading="lazy"></span><span class="t-label c-tertiary">Як обрати · 12.09.2026</span><strong class="t-h4">Як обрати гібридний інвертор для будинку</strong></a>
+        <a href="article.html?id=credit-0-step-by-step" class="lpost" data-reveal><span class="lpost__cover"><img src="img/hero-1920.jpg" alt="" width="1920" height="815" loading="lazy"></span><span class="t-label c-tertiary">Фінансування · 04.09.2026</span><strong class="t-h4">Кредит 0% на енергообладнання: покрокова інструкція</strong></a>
+        <a href="article.html?id=generator-vs-station-vs-inverter" class="lpost" data-reveal><span class="lpost__cover"><img src="img/prod-generator.jpg" alt="" width="1192" height="1100" loading="lazy"></span><span class="t-label c-tertiary">Порівняння · 27.08.2026</span><strong class="t-h4">Генератор, зарядна станція чи інвертор з АКБ: що обрати</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЗАЯВКА -->
+  <section class="section" id="lead" style="padding-top:0">
+    <div class="container">
+      <div class="lead" data-reveal>
+        <div class="stack" style="--stack-gap:var(--space-5)">
+          <span class="label-chip">Заявка</span>
+          <h2 class="t-h2">Розрахуємо рішення для вашого об'єкта</h2>
+          <p class="c-secondary">Інженер відповість протягом 2 годин у зручному для вас каналі.</p>
+          <a href="tel:0800750120" class="lead__phone">0 800 750 120</a>
+          <div class="cluster"><a href="https://t.me/luckyenergy" class="chip" target="_blank" rel="noopener">Telegram</a><a href="viber://chat?number=%2B380800750120" class="chip">Viber</a><a href="https://wa.me/380800750120" class="chip" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+        <form class="lead__form" action="#" method="post">
+          <fieldset>
+            <legend>1. Який у вас об'єкт?</legend>
+            <div class="grid grid--4"><label class="option-tile"><input type="radio" name="object" value="apartment" checked>Квартира</label><label class="option-tile"><input type="radio" name="object" value="house">Будинок</label><label class="option-tile"><input type="radio" name="object" value="business">Бізнес</label><label class="option-tile"><input type="radio" name="object" value="osbb">ОСББ</label></div>
+          </fieldset>
+          <fieldset>
+            <legend>2. Як з вами зв'язатися?</legend>
+            <div class="grid grid--2">
+              <div class="field"><label class="field__label" for="lead-name">Ім'я</label><input class="input" id="lead-name" name="name" autocomplete="given-name" placeholder="Як до вас звертатися"></div>
+              <div class="field"><label class="field__label" for="lead-tel">Телефон</label><input class="input" id="lead-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380" required></div>
+            </div>
+            <div class="cluster" style="--cluster-gap:var(--space-6);margin-top:var(--space-4)">
+              <label class="check"><input type="radio" name="channel" value="call" checked>Дзвінок</label>
+              <label class="check"><input type="radio" name="channel" value="telegram">Telegram</label>
+              <label class="check"><input type="radio" name="channel" value="viber">Viber</label>
+            </div>
+          </fieldset>
+          <div class="cluster" style="--cluster-gap:var(--space-6)">
+            <button type="submit" class="btn btn--primary btn--lg">Отримати розрахунок</button>
+            <span class="t-caption c-tertiary" style="max-width:22rem">Натискаючи кнопку, ви погоджуєтесь із <a href="page.html?id=privacy">політикою конфіденційності</a>.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" data-theme="dark">
+  <div class="container">
+    <div class="site-footer__cols">
+      <div class="site-footer__col"><a href="index.html" class="site-header__logo" style="color:var(--color-text)"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark-outline"/></svg>Lucky Energy</a><p class="c-secondary" style="max-width:20rem">Продаж, монтаж і сервіс систем енергонезалежності по всій Україні.</p></div>
+      <div class="site-footer__col"><h3>Каталог</h3><a href="catalog.html?cat=inverters">Інвертори</a><a href="catalog.html?cat=batteries">Акумулятори</a><a href="catalog.html?cat=panels">Сонячні панелі</a><a href="catalog.html?cat=kits">Готові комплекти</a><a href="catalog.html?cat=generators">Генератори</a></div>
+      <div class="site-footer__col"><h3>Рішення і послуги</h3><a href="solution.html?type=apartment">Для квартири</a><a href="solution.html?type=house">Для будинку</a><a href="solution.html?type=business">Для бізнесу</a><a href="#process">Монтаж</a><a href="page.html?id=service">Сервіс і ТО</a></div>
+      <div class="site-footer__col"><h3>Покупцям</h3><a href="page.html?id=delivery">Доставка й оплата</a><a href="page.html?id=warranty">Гарантія</a><a href="page.html?id=returns">Обмін і повернення</a><a href="#finance">Фінансування</a><a href="blog.html">Блог</a></div>
+      <div class="site-footer__col"><h3>Контакти</h3><a href="tel:0800750120" style="font-size:1.25rem;font-weight:600;color:var(--color-text)">0 800 750 120</a><a href="mailto:hello@luckyenergy.com.ua">hello@luckyenergy.com.ua</a><span class="c-tertiary">м. Тернопіль, вул. Промислова, 20 · Пн–Сб 9:00–19:00</span><span class="site-footer__meta"><button type="button" class="lang-switch lang-switch--text" data-lang-switch aria-haspopup="dialog" aria-expanded="false" aria-label="Мова сайту: українська. Змінити мову">UA</button></span></div>
+    </div>
+    <div class="site-footer__bottom"><span>© 2026 Lucky Energy · ТОВ «Лакі Енерджі»</span><span><a href="page.html?id=offer">Публічна оферта</a> · <a href="page.html?id=privacy">Політика конфіденційності</a></span><span>YouTube · Instagram · Facebook · TikTok</span></div>
+  </div>
+  <div class="site-footer__word" aria-hidden="true">
+    <!-- viewBox = природна ширина напису Geologica 700 при 190px (1469) + поля; літери не деформуються -->
+    <svg viewBox="0 0 1485 124" role="presentation" focusable="false"><text x="742.5" y="152" text-anchor="middle">LUCKY ENERGY</text></svg>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Швидка навігація">
+  <a href="catalog.html"><svg class="icon"><use href="#i-catalog"/></svg>Каталог</a>
+  <a href="catalog.html" data-open-search><svg class="icon"><use href="#i-search"/></svg>Пошук</a>
+  <a href="cart.html"><svg class="icon"><use href="#i-cart"/></svg>Кошик</a>
+  <a href="compare.html"><svg class="icon"><use href="#i-compare"/></svg>Порівняти</a>
+  <a href="#lead"><svg class="icon"><use href="#i-chat"/></svg>Зв'язок</a>
+</nav>
+
+<script type="module" src="js/ui.js"></script>
+<script type="module" src="js/topbar.js"></script>
+<script type="module" src="js/home.js"></script>
+<script type="module" src="js/home-light.js"></script>
+</body>
+</html>

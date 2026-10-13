@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Lucky Energy · світла тема для внутрішніх сторінок (каталог, товар, кошик, квіз, кейси…)
+   Підключається після home-light.css. Тут лише те, що на світлому тлі поводиться інакше, ніж на темному.
+   ========================================================================== */
+
+/* Липкі елементи: шапка світлого концепту після скролу — один ряд 4rem, а не пігулка 5.5rem */
+.filters { top: 5.5rem; }
+.product-nav { top: 4.75rem; }
+.summary { top: 6rem; }
+.cmp thead th { top: 4.75rem; }
+.product-section, .sol-hero, .case-hero { scroll-margin-top: 6rem; }
+
+/* Зелений відсвіт у шапках сторінок: на світлому — ледь помітний */
+.page-head::before { opacity: .55; }
+
+/* Темний контрастний блок-заклик (.grid-help) у світлій темі: тло стає темним, кнопка «темна» була б невидима */
+.grid-help { background: var(--color-bg-inverse); color: var(--color-text-inverse); }
+.grid-help .btn--dark { background: var(--color-cta); color: var(--color-on-cta); }
+.grid-help .btn--dark:hover { background: var(--color-cta-hover); }
+.grid-help .btn--secondary { border-color: rgba(241, 245, 242, .35); color: var(--color-text-inverse); }
+.grid-help .btn--secondary:hover { border-color: var(--color-text-inverse); background: rgba(241, 245, 242, .08); }
+
+/* Картки й поверхні на світлому — тінь замість світіння */
+.product-card, .sol-pack, .kit-card, .summary, .checkout__step, .cart-item__media, .cmp-head__media, .case-eq { box-shadow: var(--shadow-1); }
+.product-card:hover, .sol-pack--rec { box-shadow: var(--shadow-2); }
+.cart-item__media, .cmp-head__media, .gallery__stage, .gallery__thumb, .product-card__media, .case-eq__media { background: #EEF3EF; }
+.gallery__thumb { opacity: .8; }
+.gallery__thumb[aria-selected="true"] { box-shadow: 0 0 0 1px var(--color-accent); }
+.product-card__fav { background: rgba(255, 255, 255, .85); color: var(--color-text-secondary); }
+.product-card__fav[aria-pressed="true"] { background: var(--color-accent); color: #FFFFFF; }
+.cmp-head__remove { background: rgba(255, 255, 255, .85); color: var(--color-text); }
+.cat-nav a[aria-current], .tabs__tab[aria-selected="true"], .sol-switch .tabs__tab[aria-current="page"] { color: #FFFFFF; }
+
+/* Галерея товару: пілюля зі стрілками — біла з тінню, темні іконки й лічильник */
+.gallery__nav { background: rgba(255, 255, 255, .92); box-shadow: var(--shadow-2); }
+.gallery__nav .arrow-btn { border-color: transparent; color: var(--color-text); }
+.gallery__nav .arrow-btn--filled { background: #0B120E; color: var(--ink-50); }
+.gallery__counter { color: var(--color-text-secondary); }
+.gallery__badges .badge--solid { box-shadow: var(--shadow-1); }
+
+/* Плаваючі панелі (порівняння, покупка, крок квізу) — білі з тінню */
+.compare-bar, .buy-bar { background: var(--color-surface-1); box-shadow: var(--shadow-3); }
+
+/* Квіз: галочка в плитках приладів — темна на зеленому вже добре; підказка */
+.quiz__hint b { color: var(--color-accent-text); }
+
+/* Кейс: смугаста заглушка комплектуючих і лінія кроків */
+.case-eq--misc .case-eq__media { background: repeating-linear-gradient(135deg, #E4EBE6 0 10px, #F2F6F3 10px 20px); }
+.case-steps li::after { background: var(--color-bg-page); }
+.case-gallery-wrap::before { background: linear-gradient(90deg, var(--color-bg-page) 0%, color-mix(in srgb, var(--color-bg-page) 75%, transparent) 40%, transparent 100%); }
+.case-gallery-wrap::after { background: linear-gradient(270deg, var(--color-bg-page) 0%, color-mix(in srgb, var(--color-bg-page) 75%, transparent) 40%, transparent 100%); }
+
+/* Відгук власника в кейсі та підсумок — трохи щільніші рамки */
+.case-review, .quiz-result__chips li { border-color: var(--color-border); }
+
+/* Стрілка на обкладинці статті: на світлому темна напівпрозора кнопка з темною іконкою невидима — робимо білу пігулку */
+.kb-post__cover .arrow-btn { background: rgba(255, 255, 255, .88); border-color: rgba(255, 255, 255, .9); color: #0B120E; }
+
+/* Перший блок сторінки: у темній темі шапка фіксована й накладається, тому там відступ 9.5rem.
+   У світлій шапка стоїть у потоці, тож лишаємо лише візуальний зазор, як у темній (48px) */
+.page-head, .product-top { padding-top: var(--space-12); }
+@media (max-width: 899px) { .page-head, .product-top { padding-top: var(--space-8); } }
